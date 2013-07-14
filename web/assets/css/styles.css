@@ -1,0 +1,19 @@
+div#banner {
+  height: 250px;
+}
+div#navigation {
+  height: 75px;
+}
+div#navigation div.span4 {
+  height: 75px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+div#content div.span10 {
+  margin-top: 10px;
+  margin-left: 90px;
+  margin-right: 90px;
+}
+div#footer {
+  height: 75px;
+}
