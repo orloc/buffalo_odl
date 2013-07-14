@@ -3,19 +3,25 @@
 {% block body %}
 	<div id="content" class="row">
 		<div class="span10">
-			<div class="span4 topic_block" id="about_odl">
-				<h2>Something</h2>
-				<p>Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water.</p>
-			</div>
-			<div class="span4 topic_block" id="our_organization">
-				<h2>Something</h2>
-				<p>Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water.</p>
-			</div>
+			<div class="row">
+				<div class="span4 topic_block" id="about_odl">
+					<h2>Something</h2>
+					<p>Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water.</p>
+				</div>
+				<div class="span4 topic_block" id="our_organization">
+					<h2>Something</h2>
+					<p>Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water.</p>
+				</div>
 
-			<div class="span4 topic_block" id="get_involved">
-				<h2>Something</h2>
-				<p>Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water.</p>
+				<div class="span4 topic_block" id="get_involved">
+					<h2>Something</h2>
+					<p>Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water.</p>
+				</div>
 			</div>
+			<div id="support" class="row">
+				<h2>Our Supporters</h2>
+			</div>
+			<hr>
 			<div id="device-list">
 				<table class="table table-bordered table-stripped table-hover">
 					<caption>
@@ -38,6 +44,9 @@
 							<td>
 								Availablity / Location 
 							</td>
+							<td>
+								Status
+							</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -58,17 +67,66 @@
 								<td>
 								.h
 								</td>
+								<td>
+								</td>
 							</tr>
 						{% endfor %}
 					</tbody>
 				</table>
 			</div>
-			<div id="contact">
-			a big form
+			<div class="row" id="contact">
+				<h2> Get In Touch </h2>
+				<div class="span5">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis egestas sem. Quisque at nunc sit amet sem sollicitudin consequat. Fusce mattis id arcu in pulvinar. Vivamus congue sed dui ut volutpat. Aenean pharetra velit ac justo malesuada accumsan. Cras consequat, lacus eu aliquam pellentesque, felis tortor semper odio, a facilisis orci sem nec massa. Vivamus ligula lacus, gravida at congue id, convallis eu sapien. In est nulla, consequat eget tellus sit amet, aliquam volutpat metus. Donec nisi velit, convallis sed orci eget, placerat vestibulum velit. Vivamus tellus risus, euismod a risus eget, dictum fringilla felis. Quisque sit amet eros velit. Suspendisse dictum ultrices nibh id posuere. In dapibus ligula ut posuere semper.</p>
+					<span class="muted"><i>-Buffalo, ODL Team</i></span>
+				</div>
+				<div class="span5">
+					<form action="#" method="POST" {{ form_enctype(contact) }}>
+						<fieldset>
+						<legend>Contact Us</legend>
+							<div class="row">
+								<div class="span2">
+									{{ form_label(contact.first_name) }}
+								</div>
+								<div class="span3">
+									{{ form_widget(contact.first_name) }}
+								</div>
+							</div>
+							<div class="row">
+								<div class="span2">
+									{{ form_label(contact.last_name) }}
+								</div>
+								<div class="span3">
+									{{ form_widget(contact.last_name) }}
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="span2">
+									{{ form_label(contact.email) }}
+								</div>
+								<div class="span3">
+									{{ form_widget(contact.email) }}
+								</div>
+							</div>
+							<div class="row">
+								<div class="span2">
+									{{ form_label(contact.message) }}
+								</div>
+							</div>
+							<div class="row">
+								<div class="span5">
+								{{ form_widget(contact.message) }}
+								</div>
+							</div>
+						</fieldset>
+						<button type="submit" class="btn btn-primary pull-right">Submit</button>
+						{{ form_row(contact._token) }}
+					</form>
+				</div>
 			</div>
-			<div id="map-canvas">
-			a map
-			</div>
+		</div>
+		<div id="map-canvas">
 		</div>
 	</div>
 {% endblock %}

@@ -32,6 +32,13 @@ div#navigation div.span4 {
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
 }
+div#navigation div.span4 a img {
+  margin: 0 5px 0 5px;
+}
+div#navigation div.span4 span {
+  font-size: x-large;
+  font-family: 'Alegreya', serif;
+}
 div#content {
   background-color: white;
 }
@@ -50,6 +57,25 @@ div#content div.span10 div#our_organization {
 }
 div#content div.span10 div#device-list {
   margin-top: 20px;
+}
+div#content div.span10 div#contact {
+  margin-bottom: 20px;
+}
+div#content div.span10 div#contact p {
+  margin-top: 15px;
+}
+div#content div.span10 div#contact form textarea {
+  resize: none;
+  width: 380px;
+  max-width: 380px;
+  min-width: 380px;
+  height: 125px;
+  max-height: 125px;
+  min-height: 125px;
+}
+div#content div#map-canvas {
+  height: 400px;
+  width: 100%;
 }
 div#footer {
   background-color: #555C5C;

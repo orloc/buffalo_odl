@@ -9,6 +9,8 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
+use OpenDeviceLab\ApplicationBundle\Form;
+
 class DefaultController extends Controller { 
 	
 	/**
@@ -16,7 +18,17 @@ class DefaultController extends Controller {
 	* @Method({"GET"})
 	*/
 	public function indexAction(Request $request) { 
+		$contactForm = $this->makeContactForm();
 
-		return $this->render('OpenDeviceLabApplicationBundle:Site:landing.html.twig');
+		return $this->render('OpenDeviceLabApplicationBundle:Site:landing.html.twig', array ( 
+			'contact' => $contactForm->createView()
+		));
+	}
+
+	public function makeContactForm() { 
+		$type = new Form\ContactType();
+		$form = $this->createForm($type);
+
+		return $form;
 	}
 }
