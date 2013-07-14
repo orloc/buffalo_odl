@@ -16,26 +16,28 @@
     <meta name="viewport" content="width=device-width">
 
 	{% block stylesheets %}
-
+		<link href='http://fonts.googleapis.com/css?family=Exo|Alegreya:700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="{{ asset('/bundles/twitter/bootstrap/docs/assets/css/bootstrap.css') }}">
 		<link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
-
 	{% endblock %}
 
 </head>
 <body>
 <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-	<div class="container">
+	<div id="wrapper" class="container">
 		<div id="breadcrums" class="row">
-			breadcrums? 
+			meow
 		</div>
 		<div id="banner" class="row">
+			<h1>Buffalo Open Device Lab</h1>
 
 		</div>
 		<div id="navigation" class="row">
 			<div id="about_us" class="span4">
 			</div>
 			<div id="devices" class="span4">
+				<a href="#"><img src="{{ asset('/assets/img/modbile-overlay.png') }}"></a>
+			
 			</div>
 			<div id="locations" class="span4">
 			</div>
@@ -61,6 +63,10 @@
 		</div>
 
 		{% block javascripts %}
+
+			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{ google.api_key }}&sensor=true">
+    </script>
+			<script src="{{asset('/assets/js/map.js') }}"></script>
 		{% endblock %}
 	</div>
 </body>
