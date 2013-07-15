@@ -16,8 +16,8 @@ body thead td {
   text-align: justify;
 }
 div#banner {
-  background-color: #D4EEF5;
-  height: 250px;
+  background: #D4EEF5;
+  height: 350px;
 }
 div#banner h1 {
   margin: 20px 0px 10px 25px;

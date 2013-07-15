@@ -14,10 +14,9 @@ $(document).ready(function(){
 		);
 	});
 
-	window.scroll(function () { 
-		console.log('bitches');
+	$(window).scroll(function () { 
 		var div = $('#breadcrumbs');
-		if (this.scrollTop != 0 ) {
+		if ($(this).scrollTop() != 0 ) {
 			if (!(div.hasClass('navbar-fixed-top'))){
 				div.addClass('navbar-fixed-top');
 			}	
