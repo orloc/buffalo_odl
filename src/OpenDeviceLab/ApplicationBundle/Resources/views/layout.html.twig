@@ -25,7 +25,7 @@
 <body>
 <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 	<div id="wrapper" class="container">
-		<div id="breadcrums" class="row">
+		<div id="breadcrumbs" class="row">
 			meow
 		</div>
 		<div id="banner" class="row">
@@ -34,14 +34,23 @@
 		</div>
 		<div id="navigation" class="row">
 			<div id="about_us" class="span4">
-				<span>About Us</span>
+				<a href="#bullets">
+					<img src="{{ asset('/assets/img/light-blownup.png') }}">
+					<span class="link-over">About Us</span>
+				</a>
 			</div>
 			<div id="devices" class="span4">
-				<a href="#"><img src="{{ asset('/assets/img/modbile-overlay.png') }}"></a>
-				<span>Devices</span>
+				<a href="#device-list">
+					<img src="{{ asset('/assets/img/mobile-overlay.png') }}">
+					<span class="link-over">Devices</span>
+					</a>
+
 			</div>
 			<div id="locations" class="span4">
-				<span>Locations</span>
+				<a href="#contact">
+					<img src="{{ asset('/assets/img/house-blownup.png') }}">
+					<span class="link-over">Locations</span>
+				</a>
 			</div>
 		</div>
 		{% block body %}
@@ -52,9 +61,11 @@
 		</div>
 
 		{% block javascripts %}
-
+			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{ maps_key }}&sensor=true">
     </script>
+
+			<script src="{{asset('/assets/js/main.js') }}"></script>
 			<script src="{{asset('/assets/js/map.js') }}"></script>
 		{% endblock %}
 	</div>

@@ -1,5 +1,7 @@
 body { 
 	background: url('../img/noise_lines.png') repeat;
+	background-attachment: fixed;
+	color: #364450;
 
 	h1, h2, h3 {
 		font-family: 'Alegreya', serif;
@@ -10,6 +12,11 @@ body {
 	}
 
 }
+
+.formatText {
+	text-align: justify;
+}
+
 div#wrapper{ 
 }
 
@@ -17,31 +24,47 @@ div#banner {
 	background-color: #D4EEF5;
 	height: 250px;	
 	h1 { 
-		margin: 20px 15px 10px 15px;
+		margin: 20px 0px 10px 25px;
 	}
 }
 
-div#breadcrums { 
+div#breadcrumbs { 
 	background-color: #EB3D21;
 }
 
 div#navigation {
 	background-color: white;
-	height: 75px;
 	div.span4{ 
-		background-color: #D4EEF5;
-		height: 75px;
-		margin-right: 10px;
-		margin-left: 10px;
-		border-bottom-right-radius: 10px;
-		border-bottom-left-radius: 10px;
+		margin: 20px 10px 5px 10px;
+		height: 144px;
+		width: 300px;
 
-		a img { 
-			margin: 0 5px 0 5px;
+		&#devices, &#about_us, &#locations {
+			a { 
+				display: block;
+				background-color: #f7f7f7;
+				background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#e7e7e7));
+				background-image: -webkit-linear-gradient(top, #f7f7f7, #e7e7e7); 
+				background-image: -moz-linear-gradient(top, #f7f7f7, #e7e7e7); 
+				background-image: -ms-linear-gradient(top, #f7f7f7, #e7e7e7); 
+				background-image: -o-linear-gradient(top, #f7f7f7, #e7e7e7); 
+				color: #a7a7a7;
+				margin: 0px auto 0px auto;
+				width: 144px;
+				height: 144px;
+				position: relative;
+				text-align: center;
+				text-decoration: none;
+				line-height: 144px;
+				border-radius: 50%;
+				box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;			
+			}
 		}
+
 		span { 
 			font-size: x-large;
 			font-family: 'Alegreya', serif;
+			color: #EB3D21;
 		}
 	}
 }
@@ -54,14 +77,20 @@ div#content {
 		margin-left: 90px;
 		margin-right: 90px;
 
-		div.topic_block {
-			width: 253.33px;
-			margin: 0px;
-			padding: 0px;
+		div#bullets {
+			margin: 20px 0px 10px 0px;
+			text-align: justify;
 		}
 
-		div#our_organization { 
-			margin: 0 10px 0 10px;
+		div.topic_block {
+			width: 243.33px;
+			margin: 0px;
+			padding: 0px;
+
+			&.middle {
+				margin-left: 24px;
+				margin-right: 24px;
+			}
 		}
 
 		div#device-list {
@@ -75,25 +104,36 @@ div#content {
 				}
 			}
 		}
-		
-		div#contact { 
-			margin-bottom: 20px;
-			
-			p { 
-				margin-top: 15px;
-			}
 
-			form textarea { 
-				resize: none;
-				width: 380px;
-				max-width: 380px;
-				min-width:380px;
-				height: 125px;
-				max-height: 125px;
-				min-height: 125px;
-			}
+		.text{
+			margin-right: 40px;
+			.formatText;
 		}
 	}
+
+	div#support {
+		margin: 0px; 
+	}
+
+	div#contact { 
+		margin: 0px;
+		margin-bottom: 20px;
+		
+		p { 
+			margin-top: 15px;
+		}
+
+		form textarea { 
+			resize: none;
+			width: 380px;
+			max-width: 380px;
+			min-width:380px;
+			height: 125px;
+			max-height: 125px;
+			min-height: 125px;
+		}
+	}
+
 
 	div#map-canvas {
 			height: 400px;

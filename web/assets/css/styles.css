@@ -1,5 +1,7 @@
 body {
   background: url('../img/noise_lines.png') repeat;
+  background-attachment: fixed;
+  color: #364450;
 }
 body h1,
 body h2,
@@ -10,34 +12,52 @@ body p,
 body thead td {
   font-family: 'Exo', sans-serif;
 }
+.formatText {
+  text-align: justify;
+}
 div#banner {
   background-color: #D4EEF5;
   height: 250px;
 }
 div#banner h1 {
-  margin: 20px 15px 10px 15px;
+  margin: 20px 0px 10px 25px;
 }
-div#breadcrums {
+div#breadcrumbs {
   background-color: #EB3D21;
 }
 div#navigation {
   background-color: white;
-  height: 75px;
 }
 div#navigation div.span4 {
-  background-color: #D4EEF5;
-  height: 75px;
-  margin-right: 10px;
-  margin-left: 10px;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  margin: 20px 10px 5px 10px;
+  height: 144px;
+  width: 300px;
 }
-div#navigation div.span4 a img {
-  margin: 0 5px 0 5px;
+div#navigation div.span4#devices a,
+div#navigation div.span4#about_us a,
+div#navigation div.span4#locations a {
+  display: block;
+  background-color: #f7f7f7;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#e7e7e7));
+  background-image: -webkit-linear-gradient(top, #f7f7f7, #e7e7e7);
+  background-image: -moz-linear-gradient(top, #f7f7f7, #e7e7e7);
+  background-image: -ms-linear-gradient(top, #f7f7f7, #e7e7e7);
+  background-image: -o-linear-gradient(top, #f7f7f7, #e7e7e7);
+  color: #a7a7a7;
+  margin: 0px auto 0px auto;
+  width: 144px;
+  height: 144px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  line-height: 144px;
+  border-radius: 50%;
+  box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
 }
 div#navigation div.span4 span {
   font-size: x-large;
   font-family: 'Alegreya', serif;
+  color: #EB3D21;
 }
 div#content {
   background-color: white;
@@ -47,24 +67,37 @@ div#content div.span10 {
   margin-left: 90px;
   margin-right: 90px;
 }
+div#content div.span10 div#bullets {
+  margin: 20px 0px 10px 0px;
+  text-align: justify;
+}
 div#content div.span10 div.topic_block {
-  width: 253.33px;
+  width: 243.33px;
   margin: 0px;
   padding: 0px;
 }
-div#content div.span10 div#our_organization {
-  margin: 0 10px 0 10px;
+div#content div.span10 div.topic_block.middle {
+  margin-left: 24px;
+  margin-right: 24px;
 }
 div#content div.span10 div#device-list {
   margin-top: 20px;
 }
-div#content div.span10 div#contact {
+div#content div.span10 .text {
+  margin-right: 40px;
+  text-align: justify;
+}
+div#content div#support {
+  margin: 0px;
+}
+div#content div#contact {
+  margin: 0px;
   margin-bottom: 20px;
 }
-div#content div.span10 div#contact p {
+div#content div#contact p {
   margin-top: 15px;
 }
-div#content div.span10 div#contact form textarea {
+div#content div#contact form textarea {
   resize: none;
   width: 380px;
   max-width: 380px;
