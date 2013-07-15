@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	$('#b2top').hide();
 	$('span.link-over').each(function() {
 		$(this).hide();
 	});
@@ -18,9 +19,12 @@ $(document).ready(function(){
 		var div = $('#breadcrumbs');
 		if ($(this).scrollTop() != 0 ) {
 			if (!(div.hasClass('navbar-fixed-top'))){
+				$('#b2top').show();
 				div.addClass('navbar-fixed-top');
 			}	
 		} else if ( div.hasClass('navbar-fixed-top')) {
+
+			$('#b2top').hide();
 			div.removeClass('navbar-fixed-top');
 		}
 	});

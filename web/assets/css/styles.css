@@ -24,6 +24,7 @@ div#banner h1 {
 }
 div#breadcrumbs {
   background-color: #EB3D21;
+  height: 25px;
 }
 div#navigation {
   background-color: white;
