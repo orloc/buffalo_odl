@@ -1,0 +1,3 @@
+admin_bundle:
+ resource: "@OpenDeviceLabAdminBundle/Controller/DefaultController.php"
+ prefix: /admin

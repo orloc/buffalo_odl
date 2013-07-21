@@ -1,4 +1,8 @@
 # app/config/routing.yml
-odl:
- resource:	"@OpenDeviceLabApplicationBundle/Controller/DefaultController.php"
- type:		annotation
+applicationBundle:
+ resource: "@OpenDeviceLabApplicationBundle/Resources/config/routing.yml"
+
+#admin: 
+# resource: "@OpdenDeviceLabAdminBundle/Controller/DefaultController.php"
+# type:     annotation
+# prefix:   

@@ -1,0 +1,3 @@
+odl:
+ resource:	"@OpenDeviceLabApplicationBundle/Controller/DefaultController.php"
+ type:		annotation
