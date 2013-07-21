@@ -76,6 +76,10 @@ div#banner h1 span.color {
 div#breadcrumbs {
   background-color: #d44a13;
   height: 25px;
+  font-family: 'Armata', sans-serif;
+}
+div#breadcrumbs a:hover {
+  color: white;
 }
 div#navigation {
   background-color: white;

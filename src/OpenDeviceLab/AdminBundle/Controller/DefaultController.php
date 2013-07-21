@@ -18,7 +18,7 @@ class DefaultController extends Controller {
 	}
 
 	/**
-	* @Route("/login", name="_login")
+	* @Route("/login", name="login")
 	* @Method({"GET"})
 	*/
 	public function loginAction (Request $request) { 

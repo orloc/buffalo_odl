@@ -1,3 +1,7 @@
 admin_bundle:
  resource: "@OpenDeviceLabAdminBundle/Controller/DefaultController.php"
+ type: annotation
  prefix: /admin
+
+login_check:
+ pattern: /admin/login_check

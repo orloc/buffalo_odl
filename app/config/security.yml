@@ -20,13 +20,15 @@ security:
 
         login:
             pattern: ^/admin/login$
-            security: false
             anonymous: ~
+
         secured_area:
             pattern: ^/admin
             form_login:
                 check_path: /login_check
+                login_path: /admin/login
 
     access_control:
         - { path: ^/admin.*$, roles: ROLE_ADMIN }
+        - { path: ^admin/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
