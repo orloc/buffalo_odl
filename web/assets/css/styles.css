@@ -1,3 +1,4 @@
+/*#D4EEF5;*/
 body {
   background: url('../img/noise_lines.png') repeat;
   background-attachment: fixed;
@@ -21,8 +22,35 @@ body thead td {
   text-align: justify;
 }
 div#banner {
-  background: #d4eef5 url('../img/buffalo_skyline.png');
+  background: #d0dcff;
+  background: -moz-linear-gradient(top, #d0dcff 31%, #ffffff 99%);
+  /* FF3.6+ */
+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(31%, #d0dcff), color-stop(99%, #ffffff));
+  /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(top, #d0dcff 31%, #ffffff 99%);
+  /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(top, #d0dcff 31%, #ffffff 99%);
+  /* Opera 11.10+ */
+
+  background: -ms-linear-gradient(top, #d0dcff 31%, #ffffff 99%);
+  /* IE10+ */
+
+  background: linear-gradient(to bottom, #d0dcff 31%, #ffffff 99%);
+  /* W3C */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d0dcff', endColorstr='#ffffff', GradientType=0);
+  /* IE6-9 */
+
   height: 390px;
+  overflow: none;
+}
+div#banner div#image {
+  height: 390px;
+  margin: 0px;
+  background-image: url('../img/buffalo_skyline.png');
 }
 div#banner h1 {
   padding-left: 25px;
@@ -43,10 +71,10 @@ div#banner h1 span#logo_wrapper {
 div#banner h1 span.color {
   display: inline;
   margin-left: 0px;
-  color: #D44A13;
+  color: #d44a13;
 }
 div#breadcrumbs {
-  background-color: #D44A13;
+  background-color: #d44a13;
   height: 25px;
 }
 div#navigation {
@@ -81,47 +109,57 @@ div#navigation div.span4#locations a {
 div#navigation div.span4 span {
   font-size: x-large;
   font-family: 'Alegreya', serif;
-  color: #EB3D21;
+  color: #d44a13;
 }
-div#content {
+div.content {
   background-color: white;
 }
-div#content div.span10 {
+div.content div.span10 {
   margin-top: 10px;
   margin-left: 90px;
   margin-right: 90px;
 }
-div#content div.span10 div#bullets {
+div.content div.span10 div#bullets {
   margin: 20px 0px 10px 0px;
   text-align: justify;
 }
-div#content div.span10 div.topic_block {
+div.content div.span10 div.topic_block {
   width: 243.33px;
   margin: 0px;
   padding: 0px;
 }
-div#content div.span10 div.topic_block.middle {
+div.content div.span10 div.topic_block.middle {
   margin-left: 24px;
   margin-right: 24px;
 }
-div#content div.span10 div#device-list {
+div.content div.span10 div#device-list {
   margin-top: 20px;
 }
-div#content div.span10 .text {
+div.content div.span10 div#device-list table {
+  background-color: #D0DCFF;
+}
+div.content div.span10 div#device-list table tr:nth-child(even) {
+  background-color: #E9EFFF;
+}
+div.content div.span10 div#device-list table thead {
+  background-color: #364450;
+  color: #d44a13;
+}
+div.content div.span10 .text {
   margin-right: 40px;
   text-align: justify;
 }
-div#content div#support {
+div.content div#support {
   margin: 0px;
 }
-div#content div#contact {
+div.content div#contact {
   margin: 0px;
   margin-bottom: 20px;
 }
-div#content div#contact p {
+div.content div#contact p {
   margin-top: 15px;
 }
-div#content div#contact form textarea {
+div.content div#contact form textarea {
   resize: none;
   width: 380px;
   max-width: 380px;
@@ -130,7 +168,7 @@ div#content div#contact form textarea {
   max-height: 125px;
   min-height: 125px;
 }
-div#content div#map-canvas {
+div.content div#map-canvas {
   height: 400px;
   width: 100%;
 }

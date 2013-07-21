@@ -1,8 +1,14 @@
+@fontColor	: #364450;
+@bannerColor: #d0dcff;
+/*#D4EEF5;*/
+@footerColor: #555C5C; 
+@accentColor: #D44A13;
+
 body { 
 
 	background: url('../img/noise_lines.png') repeat;
 	background-attachment: fixed;
-	color: #364450;
+	color: @fontColor;
 
 	h1, h2, h3 {
 		font-family: 'Alegreya', serif;
@@ -27,16 +33,35 @@ body {
 div#wrapper{ 
 }
 
+
+
 div#banner { 
-	background: #D4EEF5 url('../img/buffalo_skyline.png');
+	background: @bannerColor;
+	background: -moz-linear-gradient(top, @bannerColor 31%, #ffffff 99%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(31%,@bannerColor), color-stop(99%,#ffffff)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, @bannerColor 31%,#ffffff 99%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, @bannerColor 31%,#ffffff 99%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, @bannerColor 31%,#ffffff 99%); /* IE10+ */
+	background: linear-gradient(to bottom, @bannerColor 31%,#ffffff 99%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0dcff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 	height: 390px;	
+
+	overflow: none;
+
+	div#image { 
+		height:390px;
+		margin: 0px;
+		background-image: url('../img/buffalo_skyline.png');
+	}
 	h1 { 
+
 
 		padding-left: 25px;
 		font-family: 'Orbitron', sans-serif;
 		margin: 30px 0px 0px 25px;
 		line-height: 85px;
-		font-size: 85px;
+		font-size: 85px;		
+
 		span#logo_wrapper { 
 			line-height:65px;
 			display: block;
@@ -49,13 +74,13 @@ div#banner {
 		span.color {
 			display: inline;
 			margin-left: 0px;
-			color: #D44A13;
+			color: @accentColor;
 		}
 	}
 }
 
 div#breadcrumbs { 
-	background-color: #D44A13;
+	background-color: @accentColor;
 	height: 25px;
 }
 
@@ -91,12 +116,15 @@ div#navigation {
 		span { 
 			font-size: x-large;
 			font-family: 'Alegreya', serif;
-			color: #EB3D21;
+			color: @accentColor;
 		}
 	}
 }
 
-div#content { 
+div#dev-wrap { 
+}
+
+div.content { 
 	background-color: white;
 
 	div.span10{
@@ -120,18 +148,28 @@ div#content {
 			}
 		}
 
+
 		div#device-list {
 			margin-top: 20px;
 			table {
+
+				tr:nth-child(even) {
+					background-color:#E9EFFF; 
+				}
+
+				background-color: #D0DCFF;
 				caption { 
 				}
 				thead { 
+					background-color: @fontColor;
+					color: @accentColor;
 				}
 				tbody { 
 				}
 			}
 		}
 
+		
 		.text{
 			margin-right: 40px;
 			.formatText;
@@ -169,7 +207,6 @@ div#content {
 }
 
 div#footer { 
-	@footerColor: #555C5C;
 	background-color: @footerColor;
 	height: 75px;
 		a { 
