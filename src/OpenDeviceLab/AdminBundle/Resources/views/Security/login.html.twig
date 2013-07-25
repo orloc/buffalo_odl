@@ -1,13 +1,23 @@
-{% if error %}
-	<div> {{ error.message }}</div>
-{% endif %}
+{% extends 'OpenDeviceLabAdminBundle::layout.html.twig' %}
 
-<form action="{{path('login_check') }}" method="POST">
-	<label for="username">Username:</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" />
+{% block body %}
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="_password" />
+<div class="row-fluid">
+	<div id="register-wrapper" class="span3 well">
+		<h2>Login</h2>
+		{% if error %}
+			<div class="muted"> {{ error.message }}</div>
+		{% endif %}
 
-	<button type="submit">Login</button>
-</form>
+		<form action="{{url('login_check') }}" method="POST">
+			<label for="username">Username:</label>
+			<input type="text" id="username" name="_username" value="{{ last_username }}" />
+
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="_password" />
+
+			<button type="submit">Login</button>
+		</form>
+	</div>
+</div>
+{% endblock %}
