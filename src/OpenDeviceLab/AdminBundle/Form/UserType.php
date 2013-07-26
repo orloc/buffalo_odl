@@ -12,19 +12,19 @@ class UserType extends AbstractType {
 		return 'user';
 	}
 
-	public function buildForm(FormBuilderInterface $builder) {
+	public function buildForm(FormBuilderInterface $builder, array $options) {
 
 		$builder->add('username', 'text', array(
-				'contraints' => new Assert\NotBlank()
+				'constraints' => new Assert\NotBlank()
 			))
 			->add('first_name', 'text', array(
-				'constraints' => new Assert\NotBlack()
+				'constraints' => new Assert\NotBlank()
 			))
 			->add('last_name', 'text', array(
 				'constraints' => new Assert\NotBlank()
 			))
 			->add('email', 'email', array(
-				'contraints' => new Assert\NotBlank()
+				'constraints' => new Assert\NotBlank()
 			))
 			->add('roles', 'choice', array(
 				'choices' => array(
@@ -32,13 +32,14 @@ class UserType extends AbstractType {
 					'ROLE_ADMIN',
 					'ROLE_SUPER_ADMIN'
 				),
-				'constraints' => new Assert\NotBlank()
+				'constraints' => new Assert\NotBlank(),
+				'data' => 'ROLE_USER'
 			))
 			->add('password', 'repeated', array(
 				'first_name' => 'password', 
 				'second_name' => 'confirm',
 				'type' => 'password',
-				'contraints' => new Assert\NotBlank()
+				'constraints' => new Assert\NotBlank()
 			));
 	}
 

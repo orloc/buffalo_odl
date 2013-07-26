@@ -6,6 +6,6 @@ admin_bundle:
 security:
  resource: "@OpenDeviceLabAdminBundle/Controller/SecurityController.php"
  type: annotation
-
+ 
 login_check: 
- pattern: /login_check
+ pattern: /admin/login_check

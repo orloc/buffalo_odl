@@ -36,9 +36,9 @@ class User implements UserInterface {
 	private $username;
 
 	/**
-	* @ORM\Column(type="string", length=32)
+	* @ORM\Column(type="string", length=60)
 	*/
-	private $salt;
+	private $password;
 	
 	/**
 	* @ORM\Column(type="string", length=60, unique=true)
@@ -53,7 +53,7 @@ class User implements UserInterface {
 	private $devices; 
 
 	/**
-	* @ORM\Column(type="boolean")
+	* @ORM\Column(type="boolean", nullable=true)
 	*/
 	private $is_active;
 	
@@ -62,7 +62,7 @@ class User implements UserInterface {
 	}
 
 	public function getSalt() { 
-		return $this->salt;
+		return null;
 	}
 
 	public function getPassword() { 
@@ -70,7 +70,7 @@ class User implements UserInterface {
 	}
 
 	public function getRoles() { 
-		return array('ROLE_USER');
+		return 'ROLE_USER';
 	}
 
 	public function eraseCredentials() { 
@@ -147,19 +147,6 @@ class User implements UserInterface {
     }
 
     /**
-     * Set salt
-     *
-     * @param string $salt
-     * @return User
-     */
-    public function setSalt($salt)
-    {
-        $this->salt = $salt;
-    
-        return $this;
-    }
-
-    /**
      * Set email
      *
      * @param string $email
@@ -216,5 +203,18 @@ class User implements UserInterface {
     public function getIsActive()
     {
         return $this->is_active;
+    }
+
+    /**
+     * Set password
+     *
+     * @param string $password
+     * @return User
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+    
+        return $this;
     }
 }

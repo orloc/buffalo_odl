@@ -11,7 +11,7 @@ class RegistrationType extends UserType {
 	}
 
 	public function buildForm(FormBuilderInterface $builder, array $options) { 
-		Parent::buildForm($builder); 
+		parent::buildForm($builder, $options); 
 
 		$builder->remove('roles');
 

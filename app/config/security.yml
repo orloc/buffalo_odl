@@ -1,6 +1,6 @@
 security:
     encoders:
-        Symfony\Component\Security\Core\User\User: 
+        OpenDeviceLab\ApplicationBundle\Entity\User: 
             algorithm: bcrypt
             cost: 15
 
@@ -19,9 +19,12 @@ security:
 
         secured_area:
             pattern: ^/admin
-            form_login:
-                check_path: /login_check
-                login_path: /login
+            anonymous: ~
+            form_login:             
+                login_path: /admin/login
+                check_path: /admin/login_check
+            logout: 
+                path: /logout
 
     access_control:
         - { path: ^/admin.*$, roles: ROLE_SUPER_ADMIN }

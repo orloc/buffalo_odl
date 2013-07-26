@@ -35,6 +35,42 @@ class SecurityController extends Controller {
 		));
 	}
 
+	/**
+	* @Route("/register", name="register")
+	* @Method({"GET|POST"})
+	*/
+	public function registerAction (Request $request) { 
+		
+		$form = $this->createForm(new Form\RegistrationType()); 
+		
+		$form->handleRequest($request);
+
+		if ($form->isValid()){ 
+			$entity = $form->getData();	
+			$entity->setRoles('ROLE_USER');
+
+			$factory = $this->get('security.encoder_factory');
+			$encoder = $factory->getEncoder($entity);
+			
+			$entity->setPassword(
+				$encoder->encodePassword(
+					$entity->getPassword(), 
+					$entity->getSalt()
+			));
+
+
+			$em = $this->getDoctrine()->getManager();
+
+			$em->persist($entity);
+			$em->flush();
+		}
+
+		return $this->render('OpenDeviceLabAdminBundle:Security:register.html.twig', array(
+			'form' => $form->createView()
+		));
+	}
+
 	public function logoutAction () { 
 	}
+
 }

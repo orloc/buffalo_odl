@@ -1,0 +1,25 @@
+{% extends 'OpenDeviceLabAdminBundle::layout.html.twig' %}
+
+{% block body %}
+<div class="row-fluid">
+	<div class="span6 well">
+			{{ form_start(form, { 'action': path('register'), 'method': "POST"}) }}
+			<fieldset>
+				<legend>Register</legend>
+				<div class="row-fluid">
+					<div class="span5">
+						{{ form_row(form.username) }}
+						{{ form_row(form.first_name) }}
+						{{ form_row(form.last_name) }}
+					</div>
+					<div class="span6">
+						{{ form_row(form.email) }}
+						{{ form_row(form.password) }}
+					</div>
+				</div>
+				<button type="submit" class="btn pull-right">Register</button>
+			</fieldset>
+			{{ form_end(form) }}
+	</div>
+</div>
+{% endblock %}
