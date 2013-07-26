@@ -8,7 +8,7 @@ use \Doctrine\ORM\Mapping as ORM;
  * This Entity is responsible for devices
  *
  * @ORM\Entity()
- * @ORM\Table(name="addresses")
+ * @ORM\Table(name="devices")
  */
 class Device {
 
