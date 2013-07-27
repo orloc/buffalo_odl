@@ -25,15 +25,15 @@
 </head>
 <body>
 <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-	<div id="wrapper" class="container">
-		<div id="breadcrumbs" class="row">
-			<div class="container">
+	<div class="container-fluid" id="wrapper">
+		<div id="breadcrumbs" class="row-fluid">
+			<div class="container-fluid">
 				<a href="#banner" id="b2top" class="link pull-right">Back to top</a>
 				<span>Buffalo ODL</span>
 			</div>
 		</div>
-		<div id="banner" class="row">
-			<div class="row" id="image">
+		<div id="banner" class="row-fluid">
+			<div class="row-fluid" id="image">
 				<div class="span8" >
 					<h1>
 						Buffalo 
@@ -46,31 +46,37 @@
 				</div>
 			</div>
 		</div>
-		<div id="navigation" class="row">
-			<div id="about_us" class="span4">
-				<a href="#bullets">
-					<img src="{{ asset('/assets/img/light-blownup.png') }}">
-					<span class="link-over">About Us</span>
-				</a>
-			</div>
-			<div id="devices" class="span4">
-				<a href="#device-list">
-					<img src="{{ asset('/assets/img/mobile-overlay.png') }}">
-					<span class="link-over">Devices</span>
+		<!--
+		<div id="navigation" class="row-fluid">
+			<div id="nav-wrapper">
+				<div id="about_us" class="span4">
+					<a href="#bullets">
+						<img src="{{ asset('/assets/img/light-blownup.png') }}">
+						<span class="link-over">About Us</span>
 					</a>
+				</div>
+				<div id="devices" class="span4">
+					<a href="#device-list">
+						<img src="{{ asset('/assets/img/mobile-overlay.png') }}">
+						<span class="link-over">Devices</span>
+						</a>
 
-			</div>
-			<div id="locations" class="span4">
-				<a href="#map-canvas">
-					<img src="{{ asset('/assets/img/house-blownup.png') }}">
-					<span class="link-over">Locations</span>
-				</a>
+				</div>
+				<div id="locations" class="span4">
+					<a href="#map-canvas">
+						<img src="{{ asset('/assets/img/house-blownup.png') }}">
+						<span class="link-over">Locations</span>
+					</a>
+				</div>
 			</div>
 		</div>
-		{% block body %}
-		{% endblock %}
+		-->
+		<div id="content-wrapper">
+			{% block body %}
+			{% endblock %}
+		</div>
 
-		<div id="footer" class="row">
+		<div id="footer" class="row-fluid">
 
 				<a class="btn"><i class="icon-facebook"></i></a>
 				<a class="btn"><i class="icon-twitter"></i></a>
@@ -79,7 +85,7 @@
 		{% block javascripts %}
 			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{ maps_key }}&sensor=true">
-    </script>
+	</script>
 
 			<script src="{{asset('/assets/js/main.js') }}"></script>
 			<script src="{{asset('/assets/js/map.js') }}"></script>
