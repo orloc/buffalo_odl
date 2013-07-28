@@ -1,0 +1,30 @@
+.center {
+  float: none;
+  margin: auto;
+}
+#login {
+  float: none;
+  margin: auto;
+  margin-top: 10%;
+  margin-bottom: auto;
+  width: 23.404255319148934%;
+  background-color: #d0dcff;
+  border-radius: 5%;
+}
+#login div {
+  float: none;
+  margin: auto;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+#login div h2 {
+  font-family: 'Orbitron', sans-serif;
+}
+#login div h2 span {
+  color: #d44a13;
+}
+#login div form {
+  display: block;
+  float: none;
+  margin: auto;
+}

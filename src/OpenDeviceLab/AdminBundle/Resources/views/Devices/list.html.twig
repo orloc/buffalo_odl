@@ -1,0 +1,53 @@
+{% set active = 'devices' %}
+{% extends 'OpenDeviceLabAdminBundle:Panel:landing.html.twig' %}
+
+{% block body %}
+	<table class="table table-bordered table-stripped table-hover">
+		<thead>
+			<tr>
+				<th>
+					Manufacturer
+				</th>
+				<th>
+					Model
+				</th>
+				<th>
+					OS
+				</th>
+				<th>
+					Donated By
+				</th>
+				<th>
+					Created At
+				</th>
+				<th>
+					Status
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+		 {% for device in devices %}
+			<tr>
+				<td>
+					{{ device.getManufacturer() }}
+				</td>
+				<td> 
+					{{ device.getModel() }}
+				</td>
+				<td>
+					{{ device.getOperationSystem() }}
+				</td>
+				<td>
+					{{ device.getDonatedBy() }}
+				</td>
+				<td>
+					{{ device.getCreatedAt() }}
+				</td>
+				<td>
+					{{ device.getStatus() }}
+				</td>
+			</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}

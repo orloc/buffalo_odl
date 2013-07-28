@@ -2,21 +2,19 @@
 
 {% block body %}
 
-<div class="row-fluid">
-	<div id="login-wrapper" class="span3 well">
-		<h2>Login</h2>
+<div id="login" class="row-fluid well">
+	<div>
+		<h2>Buffalo <span>ODL</span></h2>
 		{% if error %}
 			<div class="muted"> {{ error.message }}</div>
 		{% endif %}
 
 		<form action="{{url('login_check') }}" method="POST">
-			<label for="username">Username:</label>
-			<input type="text" id="username" name="_username" value="{{ last_username }}" />
+			<input type="text" id="username" class="input-block-level" name="_username" placeholder="Username" value="{{ last_username }}" />
 
-			<label for="password">Password:</label>
-			<input type="password" id="password" name="_password" />
-
-			<button type="submit">Login</button>
+			<input type="password" class="input-block-level" id="password" name="_password" placeholder="Password"/>
+			<br>
+			<button class="btn btn-small" type="submit">Login</button>
 		</form>
 	</div>
 </div>
