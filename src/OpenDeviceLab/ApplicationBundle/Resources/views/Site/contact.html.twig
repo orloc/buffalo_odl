@@ -1,0 +1,58 @@
+<div class="row-fluid" id="contact">
+	<div class="span6">
+
+	<h2>Get In Touch </h2>
+		<p>If you are interested in contributing, want to schedule an appoitment to use our devices or have any other general questions please feel free to use the form to the right.</p>
+		<address>
+			<i>
+			Buffalo Open Device Lab<br>
+			1 Somewhere place<br>
+			Buffalo, New York<br>
+			14222<br><br>
+			contact@buffaloodl.org
+			</i>
+		</address>
+		<span class="muted"><i>- Buffalo, ODL Team</i></span>
+	</div>
+	<div class="span6">
+		<form action="#" method="POST" {{ form_enctype(contact) }}>
+			<fieldset>
+				<div class="row-fluid">
+					<div class="span4">
+						{{ form_label(contact.first_name) }}
+					</div>
+					<div class="span8">
+						{{ form_widget(contact.first_name, { attr: { class: "input-block-level" } }) }}
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span4">
+						{{ form_label(contact.last_name) }}
+					</div>
+					<div class="span8">
+						{{ form_widget(contact.last_name, { attr: { class: "input-block-level" } }) }}
+					</div>
+				</div>
+				
+				<div class="row-fluid">
+					<div class="span4">
+						{{ form_label(contact.email) }}
+					</div>
+					<div class="span8">
+						{{ form_widget(contact.email, { attr: { class: "input-block-level" } }) }}
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span4">
+						{{ form_label(contact.message) }}
+					</div>
+				</div>
+				<div class="row-fluid">
+					{{ form_widget(contact.message, { attr: { class: "input-block-level" } }) }}
+				</div>
+			</fieldset>
+			<button type="submit" class="btn btn-primary pull-right">Submit</button>
+			{{ form_row(contact._token) }}
+		</form>
+	</div>
+</div>
