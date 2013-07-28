@@ -1,5 +1,7 @@
 $(document).ready(function(){
 	$('#b2top').hide();
+	$('#wanted-devices').hide();
+
 	$('span.link-over').each(function() {
 		$(this).hide();
 	});
@@ -14,6 +16,25 @@ $(document).ready(function(){
 			}
 		);
 	});
+
+	$('div#device-list a').click(function() { 
+		if ($('#wanted-devices').is(':hidden')){
+			$('#current-devices').fadeOut('slow', function(){ 
+				$('#wanted-devices').fadeIn('slow');
+				$('#device-label').text('Wish List');
+				$('#switch-table').text('Switch to current Devices');
+				
+			});
+		} else { 
+			$('#wanted-devices').fadeOut('slow', function() { 
+				$('#current-devices').fadeIn('slow');
+				$('#device-label').text('Available Devices');
+				$('#switch-table').text('Switch to our Wish List');
+			});
+		}
+	});
+
+
 
 	$(window).scroll(function () { 
 		var div = $('#breadcrumbs');

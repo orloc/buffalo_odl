@@ -17,7 +17,10 @@ body {
 	p, thead td , address {
 		font-family: 'Exo', sans-serif;
 	}
-
+	
+	a:hover { 
+		text-decoration: none;
+	}
 }
 
 .center { 
@@ -199,14 +202,13 @@ div#content-wrapper {
 			}
 			div#device-list {
 				margin-top: 40px;
-				margin-bottom: 40px;
+				text-align: center;
 
 				h3 { 
 					font-size: 30px;
 				}
 
 				table {
-
 					tr:nth-child(even) {
 						background-color:#E9EFFF; 
 					}
@@ -215,12 +217,19 @@ div#content-wrapper {
 					caption { 
 					}
 					thead { 
-						text-align: center;
+						th { 	
+							text-align: center;
+							border: 0;
+						}
 						background-color: @fontColor;
-						color: @accentColor;
+						border-top-radius: 2em;
+						color: lighten(@accentColor, 10%);
 					}
 					tbody { 
-
+						td { 
+							text-align: center;
+							border: 0;
+						}
 					}
 				}
 			}
@@ -258,6 +267,7 @@ div#content-wrapper {
 			height: 500px;
 			width: 100%;
 		}
+
 
 }
 

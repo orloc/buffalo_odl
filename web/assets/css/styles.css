@@ -14,6 +14,9 @@ body thead td,
 body address {
   font-family: 'Exo', sans-serif;
 }
+body a:hover {
+  text-decoration: none;
+}
 .center {
   float: none;
   margin-left: auto;
@@ -187,7 +190,7 @@ div#content-wrapper div.content div.main_content_wrapper #what-is {
 }
 div#content-wrapper div.content div.main_content_wrapper div#device-list {
   margin-top: 40px;
-  margin-bottom: 40px;
+  text-align: center;
 }
 div#content-wrapper div.content div.main_content_wrapper div#device-list h3 {
   font-size: 30px;
@@ -199,9 +202,17 @@ div#content-wrapper div.content div.main_content_wrapper div#device-list table t
   background-color: #E9EFFF;
 }
 div#content-wrapper div.content div.main_content_wrapper div#device-list table thead {
-  text-align: center;
   background-color: #364450;
-  color: #d44a13;
+  border-top-radius: 2em;
+  color: #ec642e;
+}
+div#content-wrapper div.content div.main_content_wrapper div#device-list table thead th {
+  text-align: center;
+  border: 0;
+}
+div#content-wrapper div.content div.main_content_wrapper div#device-list table tbody td {
+  text-align: center;
+  border: 0;
 }
 div#content-wrapper div.content div.main_content_wrapper div#contact {
   margin-bottom: 20px;

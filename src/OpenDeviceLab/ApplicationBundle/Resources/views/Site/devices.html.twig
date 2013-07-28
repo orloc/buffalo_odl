@@ -1,62 +1,85 @@
 <div id="device-list" class="row-fluid">
-	<table class="table table-bordered table-stripped table-hover">
-		<caption>
-			<h3>Availalbe Devices</h3>
-		</caption>
-		<thead>
-			<tr>
-				<td>
-					Manufacturer
-				</td>
-				<td>
-					Model
-				</td>
-				<td> 
-					OS/Version
-				</td>
-				<td>
-					Contributed By
-				</td>
-				<td>
-					Availablity / Location 
-				</td>
-				<td>
-					Status
-				</td>
-			</tr>
-		</thead>
-		<tbody>
-			{% for i in 0..10%}
+	<div class="main_content_wrapper">
+		<table class="table table-bordered table-stripped table-hover">
+			<caption>
+				<h3 id="device-label">Availalbe Devices</h3>
+			</caption>
+			<thead>
 				<tr>
-					<td>
-					Comming Soon!
-					</td>
-					<td>
-
-					Comming Soon!
-					</td>
-					<td>
-					Comming Soon!
-					</td>
-					<td>
-					Comming Soon!
-					</td>
-					<td>
-					Comming Soon!
-					</td>
-					<td>
-					Comming Soon!
-					</td>
+					<th>
+						Manufacturer
+					</th>
+					<th>
+						Model
+					</th>
+					<th> 
+						OS/Version
+					</th>
+					<th>
+						Contributed By
+					</th>
+					<th>
+						Availablity / Location 
+					</th>
+					<th>
+						Status
+					</th>
 				</tr>
-			{% endfor %}
-		</tbody>
-		<tbody>
-			<tr>
-			<td>
-			meow
-			</td>
-			</tr>
-		</tbody>
-	</table>
-	<p></p>
+			</thead>
+			<tbody id="current-devices">
+				{% for i in 0..10%}
+					<tr>
+						<td>
+						Comming Soon!
+						</td>
+						<td>
+
+						Comming Soon!
+						</td>
+						<td>
+						Comming Soon!
+						</td>
+						<td>
+						Comming Soon!
+						</td>
+						<td>
+						Comming Soon!
+						</td>
+						<td>
+						Comming Soon!
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+			<tbody id="wanted-devices">
+				{% for i in 0..10%}
+					<tr>
+						<td>
+						Comming Soon!
+						</td>
+						<td>
+
+						Comming Soon!
+						</td>
+						<td>
+						Comming Soon!
+						</td>
+						<td>
+						Comming Soon!
+						</td>
+						<td>
+						Comming Soon!
+						</td>
+						<td>
+							<span class="wanted">WANTED !</span>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+
+		</table>
+
+		<a id="switch-table">Switch to our Wish List</a>
+		<p>If you have old or unused devices and would like to contribute please get in touch with us!</p>
+	</div>
 </div>

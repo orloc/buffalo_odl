@@ -70,7 +70,8 @@ class User implements UserInterface {
 	}
 
 	public function getRoles() { 
-		return 'ROLE_USER';
+		return is_array($this->roles) ? $this->roles : array();
+
 	}
 
 	public function eraseCredentials() { 
