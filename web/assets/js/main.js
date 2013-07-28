@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	$('#b2top').hide();
 	$('#wanted-devices').hide();
+	$('#wanted-head').hide();
 
 	$('span.link-over').each(function() {
 		$(this).hide();

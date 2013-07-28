@@ -39,6 +39,7 @@ class UserType extends AbstractType {
 				'first_name' => 'password', 
 				'second_name' => 'confirm',
 				'type' => 'password',
+				'required' => false,
 				'constraints' => new Assert\NotBlank()
 			));
 	}

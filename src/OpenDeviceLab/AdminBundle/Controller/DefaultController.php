@@ -19,6 +19,7 @@ class DefaultController extends Controller {
 	* @Method({"GET"})
 	*/
 	public function indexAction() {
+		return $this->render('OpenDeviceLabAdminBundle:Panel:landing.html.twig');
 	}
 
 }

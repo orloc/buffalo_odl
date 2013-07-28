@@ -18,17 +18,10 @@ class DefaultController extends Controller {
 	* @Method({"GET"})
 	*/
 	public function indexAction(Request $request) { 
-		$contactForm = $this->makeContactForm();
+		$contactForm =	$this->createForm(new Form\ContactType()); 
 
 		return $this->render('OpenDeviceLabApplicationBundle:Site:landing.html.twig', array ( 
 			'contact' => $contactForm->createView()
 		));
-	}
-
-	public function makeContactForm() { 
-		$type = new Form\ContactType();
-		$form = $this->createForm($type);
-
-		return $form;
 	}
 }

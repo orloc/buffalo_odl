@@ -17,6 +17,7 @@
 
 	{% block stylesheets %}
 		<link href='http://fonts.googleapis.com/css?family=Exo|Alegreya:700|Armata|Orbitron:700' rel='stylesheet' type='text/css'>
+
 		<link rel="stylesheet" href="{{ asset('/bundles/twitter/bootstrap/docs/assets/css/bootstrap.css') }}">
 		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
@@ -28,8 +29,19 @@
 	<div class="container-fluid" id="wrapper">
 		<div id="breadcrumbs" class="row-fluid">
 			<div class="container-fluid">
-				<a href="#banner" id="b2top" class="link pull-right">Back to top</a>
-				<span>Buffalo ODL</span>
+				<div class="row-fluid">
+					<div class="span3">
+						<span>Buffalo ODL</span>
+					</div>
+					<div class="span6">
+						<a><i class="icon-book"></i></a>
+						<a><i class="icon-mobile-phone"></i></a>
+						<a><i class="icon-home"></i></a>
+					</div>
+					<div class="span3">
+						<a href="#banner" id="b2top" class="link pull-right">Back to top</a>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div id="banner" class="row-fluid">

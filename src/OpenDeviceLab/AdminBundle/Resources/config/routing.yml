@@ -1,5 +1,15 @@
-admin_bundle:
+default:
  resource: "@OpenDeviceLabAdminBundle/Controller/DefaultController.php"
+ type: annotation
+ prefix: /admin
+
+users:
+ resource: "@OpenDeviceLabAdminBundle/Controller/UserController.php"
+ type: annotation
+ prefix: /admin
+
+device:
+ resource: "@OpenDeviceLabAdminBundle/Controller/DeviceController.php"
  type: annotation
  prefix: /admin
 

@@ -26,6 +26,23 @@
 					</th>
 				</tr>
 			</thead>
+			<thead id="wanted-head">
+				<tr>
+					<th>
+						Manufacturer
+					</th>
+					<th>
+						Model
+					</th>
+					<th> 
+						OS/Version
+					</th>
+					<th>
+						Status
+					</th>
+				</tr>
+			</thead>
+
 			<tbody id="current-devices">
 				{% for i in 0..10%}
 					<tr>
@@ -58,20 +75,13 @@
 						Comming Soon!
 						</td>
 						<td>
-
 						Comming Soon!
 						</td>
 						<td>
 						Comming Soon!
 						</td>
 						<td>
-						Comming Soon!
-						</td>
-						<td>
-						Comming Soon!
-						</td>
-						<td>
-							<span class="wanted">WANTED !</span>
+							<span class="wanted"><strong>WANTED !</strong></span>
 						</td>
 					</tr>
 				{% endfor %}

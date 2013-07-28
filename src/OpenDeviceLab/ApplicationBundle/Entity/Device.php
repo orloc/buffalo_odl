@@ -12,6 +12,10 @@ use \Doctrine\ORM\Mapping as ORM;
  */
 class Device {
 
+	const STATUS_AVAILABLE = 1,
+		  STATUS_IN_USE = 2,
+		  STATUS_WANTED = 3;
+
 	/**
 	* @ORM\Id
 	* @ORM\Column(type="integer")
@@ -34,6 +38,9 @@ class Device {
 	*/
 	protected $operating_system;
 
+	/**
+	* @ORM\Column(type="string")
+	*/
 	protected $donated_by;
 
 	/**

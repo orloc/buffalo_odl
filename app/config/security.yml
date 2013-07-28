@@ -21,11 +21,13 @@ security:
             pattern: ^/admin
             anonymous: ~
             form_login:             
-                login_path: /admin/login
+                login_path: /login
                 check_path: /admin/login_check
+                default_target_path: admin_index
+                always_use_default_target_path: true
             logout: 
                 path: /logout
 
     access_control:
-        - { path: ^/admin.*$, roles: ROLE_SUPER_ADMIN }
+        - { path: ^/admin.*$, roles: IS_AUTHENTICATED_FULLY }
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }

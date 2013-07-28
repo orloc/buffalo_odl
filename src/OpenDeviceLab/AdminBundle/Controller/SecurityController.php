@@ -47,7 +47,7 @@ class SecurityController extends Controller {
 
 		if ($form->isValid()){ 
 			$entity = $form->getData();	
-			$entity->setRoles('ROLE_USER');
+			$entity->setRoles(array('ROLE_USER'));
 
 			$factory = $this->get('security.encoder_factory');
 			$encoder = $factory->getEncoder($entity);

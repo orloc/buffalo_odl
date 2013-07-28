@@ -88,6 +88,7 @@ div#breadcrumbs {
   background-color: #d44a13;
   height: 25px;
   font-family: 'Armata', sans-serif;
+  font-size: 20px;
 }
 div#breadcrumbs a:hover {
   color: white;
@@ -202,7 +203,8 @@ div#content-wrapper div.content div.main_content_wrapper div#device-list table t
 }
 div#content-wrapper div.content div.main_content_wrapper div#device-list table thead {
   background-color: #364450;
-  border-top-radius: 2em;
+  border-top-left-radius: 25%;
+  border-top-right-radius: 25%;
   color: #ec642e;
 }
 div#content-wrapper div.content div.main_content_wrapper div#device-list table thead th {
