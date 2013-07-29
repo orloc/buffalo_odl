@@ -1,0 +1,37 @@
+{% extends 'OpenDeviceLabAdminBundle::layout.html.twig' %}
+{% block layout_extend %}
+	<div class="row-fluid logo">
+		<h1>Buffalo <span>ODL</span> Admin</h1>
+	</div>
+	<div class="row-fluid">
+		<ul class="nav nav-tabs">
+			<li {% if active == 'home' %}class="active" {% endif %}>
+				<a href="{{ path('admin_index') }}">Home</a>
+			</li>
+			<li {% if active == 'users' %}class="active" {% endif %}>
+				<a href="{{ path('admin_user_list') }}">Users</a>
+			</li>
+			<li {% if active == 'devices' %}class="active" {% endif %}>
+				<a href="{{ path('admin_device_list') }}">Devices</a>
+			</li>
+		</ul>
+	</div>
+	<div class="row-fluid">
+		{% for alert_cat in [ 'info', 'success', 'warning', 'error'] %}
+		{% if app.session.FlashBag.has(alert_cat) %}
+		{% for alert in app.session.flashbag.get(alert_cat) %} 
+		<div class="alert alert-{{ alert_cat }}" >
+			<button class="close" data-dismiss="alert">×</button>
+			{{ alert|trans }}
+		</div>
+		{% endfor %}
+		{% endif %}
+		{% endfor %}
+	</div>
+
+
+	<div id="content">
+		{% block body %}
+		{% endblock %}
+	</div>
+{% endblock %}
