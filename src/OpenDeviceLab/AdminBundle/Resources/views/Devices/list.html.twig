@@ -36,7 +36,7 @@
 						{{ device.getManufacturer() }}
 					</td>
 					<td> 
-						{{ device.getModel() }}
+						<a href="{{ path('admin_device_detail'), { id: device.getId() })}}">{{ device.getModel() }}</a>
 					</td>
 					<td>
 						{{ device.getOperatingSystem() }}

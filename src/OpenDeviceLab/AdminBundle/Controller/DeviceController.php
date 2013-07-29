@@ -55,8 +55,34 @@ class DeviceController extends Controller {
 
 	}
 
-	public function editAction() { 
+	/**
+	* @Route("/device/{id}", name="admin_device_detail")
+	* @Method({"GET|POST"})
+	*/
+	public function editAction(Request $request, $id) { 
 
+		$em = $this->getDoctrine()->getManager();
+
+		$device = $em->getRepository('OpenDeviceLabApplicationBundle:Device')->find($id);
+
+		$form = $this->createForm(new Form\DeviceType(), $device);
+
+		$form->handleRequest($request);
+
+		if ($form->isValid()){ 
+			$entity = $form->getData();
+
+			$em->persist($entity);
+			$em->flush();
+			
+			$this->get('session')->getFlashBag()->add('success', sprintf('%s was successfully updated', $device->getModel()));
+
+			return $this->redirect($this->generateUrl('admin_user_list'));
+		}
+
+		return $this->render('OpenDeviceLabAdminBundle:Devices:detail.html.twig', array ( 
+			'form' => $form->createView()
+		));
 	}
 		
 	public function deleteAction() { 
