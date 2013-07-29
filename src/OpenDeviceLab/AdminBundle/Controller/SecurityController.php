@@ -36,7 +36,7 @@ class SecurityController extends Controller {
 	}
 
 	/**
-	* @Route("/register", name="register")
+	* @Route("/admin/register", name="register")
 	* @Method({"GET|POST"})
 	*/
 	public function registerAction (Request $request) { 
