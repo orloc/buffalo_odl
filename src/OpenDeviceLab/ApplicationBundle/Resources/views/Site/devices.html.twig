@@ -7,10 +7,11 @@
 			<thead id="current-head">
 				<tr>
 					<th>
-						Manufacturer
-					</th>
-					<th>
 						Model
+					</th>
+
+					<th>
+						Manufacturer
 					</th>
 					<th> 
 						OS/Version
@@ -26,10 +27,10 @@
 			<thead id="wanted-head">
 				<tr>
 					<th>
-						Manufacturer
+						Model
 					</th>
 					<th>
-						Model
+						Manufacturer
 					</th>
 					<th> 
 						OS/Version
@@ -44,10 +45,10 @@
 				{% for device in available%}
 					<tr>
 						<td>
-							{{ device.getManufacturer() }}
+							{{ device.getModel() }}
 						</td>
 						<td>
-							{{ device.getModel() }}
+							{{ device.getManufacturer() }}
 						</td>
 						<td>
 							{{ device.getOperatingSystem() }}
@@ -65,16 +66,16 @@
 				{% for device in wanted%}
 					<tr>
 						<td>
-							{{ device.getManufacturer() }}
+							{{ device.getModel() }}
 						</td>
 						<td>
-							{{ device.getModel() }}
+							{{ device.getManufacturer() }}
 						</td>
 						<td>
 							{{ device.getOperatingSystem() }}
 						</td>
 						<td>
-							<span class="label label-danger">{{ device.getNiceStatus() }}</span>
+							<span class="label label-important">{{ device.getNiceStatus() }}</span>
 						</td>
 					</tr>
 				{% endfor %}

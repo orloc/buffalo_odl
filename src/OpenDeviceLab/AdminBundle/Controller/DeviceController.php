@@ -77,7 +77,7 @@ class DeviceController extends Controller {
 			
 			$this->get('session')->getFlashBag()->add('success', sprintf('%s was successfully updated', $device->getModel()));
 
-			return $this->redirect($this->generateUrl('admin_user_list'));
+			return $this->redirect($this->generateUrl('admin_device_list'));
 		}
 
 		return $this->render('OpenDeviceLabAdminBundle:Devices:detail.html.twig', array ( 

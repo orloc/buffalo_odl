@@ -10,10 +10,10 @@
 			<thead>
 				<tr>
 					<th>
-						Manufacturer
+						Model
 					</th>
 					<th>
-						Model
+						Manufacturer
 					</th>
 					<th>
 						OS
@@ -32,11 +32,11 @@
 			<tbody>
 			 {% for device in devices %}
 				<tr>
-					<td>
-						{{ device.getManufacturer() }}
-					</td>
 					<td> 
 						<a href="{{ path('admin_device_detail', { id: device.getId() })}}">{{ device.getModel() }}</a>
+					</td>
+					<td>
+						{{ device.getManufacturer() }}
 					</td>
 					<td>
 						{{ device.getOperatingSystem() }}
