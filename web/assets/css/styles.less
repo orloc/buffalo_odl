@@ -86,12 +86,35 @@ div#banner {
 
 div#breadcrumbs { 
 	background-color: @accentColor;
-	height: 25px;
 	font-family: 'Armata', sans-serif;
-	font-size: 20px;
-	a:hover {
-		color: white;
+	font-size: 18px;
+
+	div div#bread-wrap { 
+		margin: 5px;
+
+		i { 
+			margin: 10px;
+			font-size: 35px;
+			color: white;
+
+			&:hover { 
+				color: darken(#e3e3e3, 10%);
+			}
+		}
+
 	}
+
+	#b2top { 
+		text-align: center;
+		margin: 10px;
+		color: white;
+
+		&:hover {
+			color: darken(#e3e3e3, 10%)
+		}
+	}
+
+
 }
 
 div#navigation {

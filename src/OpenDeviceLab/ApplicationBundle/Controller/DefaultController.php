@@ -19,7 +19,10 @@ class DefaultController extends Controller {
 	*/
 	public function indexAction(Request $request) { 
 		$contactForm =	$this->createForm(new Form\ContactType()); 
+		
+		$em = $this->getDoctrine()->getManager();
 
+		#$available_devices = $em->getRepository('OpenDeviceLabApplicationBundle:Device')->
 		return $this->render('OpenDeviceLabApplicationBundle:Site:landing.html.twig', array ( 
 			'contact' => $contactForm->createView()
 		));

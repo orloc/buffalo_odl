@@ -86,12 +86,27 @@ div#banner h1 span.color {
 }
 div#breadcrumbs {
   background-color: #d44a13;
-  height: 25px;
   font-family: 'Armata', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
 }
-div#breadcrumbs a:hover {
+div#breadcrumbs div div#bread-wrap {
+  margin: 5px;
+}
+div#breadcrumbs div div#bread-wrap i {
+  margin: 10px;
+  font-size: 35px;
   color: white;
+}
+div#breadcrumbs div div#bread-wrap i:hover {
+  color: #cacaca;
+}
+div#breadcrumbs #b2top {
+  text-align: center;
+  margin: 10px;
+  color: white;
+}
+div#breadcrumbs #b2top:hover {
+  color: #cacaca;
 }
 div#navigation {
   background-color: white;
