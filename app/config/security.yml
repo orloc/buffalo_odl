@@ -29,5 +29,5 @@ security:
                 path: /logout
 
     access_control:
-        - { path: ^/admin.*$, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/admin.*$, roles: ROLE_SUPER_ADMIN }
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
