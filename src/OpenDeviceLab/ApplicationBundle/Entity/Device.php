@@ -7,7 +7,7 @@ use \Doctrine\ORM\Mapping as ORM;
 /**
  * This Entity is responsible for devices
  *
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="OpenDeviceLab\ApplicationBundle\Repository\DeviceRepository")
  * @ORM\Table(name="devices")
  */
 class Device {

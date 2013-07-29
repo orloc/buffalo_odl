@@ -187,8 +187,7 @@ div#content-wrapper div.content div.main_content_wrapper h2 {
   margin-top: 30px;
   font-size: 40px;
 }
-div#content-wrapper div.content div.main_content_wrapper p,
-div#content-wrapper div.content div.main_content_wrapper span {
+div#content-wrapper div.content div.main_content_wrapper p {
   margin-top: 20px;
   font-size: 18px;
   line-height: 30px;

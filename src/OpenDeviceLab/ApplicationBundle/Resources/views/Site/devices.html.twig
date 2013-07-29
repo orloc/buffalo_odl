@@ -4,7 +4,7 @@
 			<caption>
 				<h3 id="device-label">Availalbe Devices</h3>
 			</caption>
-			<thead>
+			<thead id="current-head">
 				<tr>
 					<th>
 						Manufacturer
@@ -17,9 +17,6 @@
 					</th>
 					<th>
 						Contributed By
-					</th>
-					<th>
-						Availablity / Location 
 					</th>
 					<th>
 						Status
@@ -44,44 +41,40 @@
 			</thead>
 
 			<tbody id="current-devices">
-				{% for i in 0..10%}
+				{% for device in available%}
 					<tr>
 						<td>
-						Comming Soon!
+							{{ device.getManufacturer() }}
 						</td>
 						<td>
-
-						Comming Soon!
+							{{ device.getModel() }}
 						</td>
 						<td>
-						Comming Soon!
+							{{ device.getOperatingSystem() }}
 						</td>
 						<td>
-						Comming Soon!
+							{{ device.getDonatedBy() }}
 						</td>
 						<td>
-						Comming Soon!
-						</td>
-						<td>
-						Comming Soon!
+							<span class="label {% if device.getStatus() == 1%}label-success {% else %} label-warning {% endif %}">{{ device.getNiceStatus() }}</span>
 						</td>
 					</tr>
 				{% endfor %}
 			</tbody>
 			<tbody id="wanted-devices">
-				{% for i in 0..10%}
+				{% for device in wanted%}
 					<tr>
 						<td>
-						Comming Soon!
+							{{ device.getManufacturer() }}
 						</td>
 						<td>
-						Comming Soon!
+							{{ device.getModel() }}
 						</td>
 						<td>
-						Comming Soon!
+							{{ device.getOperatingSystem() }}
 						</td>
 						<td>
-							<span class="wanted"><strong>WANTED !</strong></span>
+							<span class="label label-danger">{{ device.getNiceStatus() }}</span>
 						</td>
 					</tr>
 				{% endfor %}

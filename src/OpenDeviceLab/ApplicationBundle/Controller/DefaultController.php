@@ -21,10 +21,16 @@ class DefaultController extends Controller {
 		$contactForm =	$this->createForm(new Form\ContactType()); 
 		
 		$em = $this->getDoctrine()->getManager();
+		$repo = $em->getRepository('OpenDeviceLabApplicationBundle:Device');
+
+		$devices = $repo->getAvailable();
+		$wanted = $repo->getWanted();
 
 		#$available_devices = $em->getRepository('OpenDeviceLabApplicationBundle:Device')->
 		return $this->render('OpenDeviceLabApplicationBundle:Site:landing.html.twig', array ( 
-			'contact' => $contactForm->createView()
+			'contact' => $contactForm->createView(),
+			'available' => $devices,
+			'wanted' => $wanted
 		));
 	}
 }

@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	$('#b2top').hide();
 	$('#wanted-devices').hide();
+
 	$('#wanted-head').hide();
 
 	$('span.link-over').each(function() {
@@ -20,17 +21,21 @@ $(document).ready(function(){
 
 	$('div#device-list a').click(function() { 
 		if ($('#wanted-devices').is(':hidden')){
-			$('#current-devices').fadeOut('slow', function(){ 
-				$('#wanted-devices').fadeIn('slow');
+			$('#current-devices').fadeOut('fast', function(){ 
 				$('#device-label').text('Wish List');
-				$('#switch-table').text('Switch to current Devices');
+				$('#current-head').fadeOut('fast', function () { 
+					$('#wanted-head').fadeIn('slow');
+					$('#wanted-devices').fadeIn('slow');
+				});
 				
 			});
 		} else { 
-			$('#wanted-devices').fadeOut('slow', function() { 
-				$('#current-devices').fadeIn('slow');
+			$('#wanted-devices').fadeOut('fast', function(){ 
 				$('#device-label').text('Available Devices');
-				$('#switch-table').text('Switch to our Wish List');
+				$('#wanted-head').fadeOut('fast', function () { 
+					$('#current-head').fadeIn('slow');
+					$('#current-devices').fadeIn('slow');
+				});
 			});
 		}
 	});
