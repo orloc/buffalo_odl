@@ -33,7 +33,7 @@ class UserController extends Controller {
 	* @Route("/users/{id}", name="admin_user_detail")
 	* @Method({"GET|POST"})
 	*/
-	public function detailAction(Request $request, $id) { 
+	public function editAction(Request $request, $id) { 
 
 		$em = $this->getDoctrine()->getManager();
 
@@ -51,12 +51,20 @@ class UserController extends Controller {
 			
 			$this->get('session')->getFlashBag()->add('success', sprintf('User with id: %s was successfully updated', $id));
 
-			$this->redirect($this->generateUrl('admin_index'));
+			return $this->redirect($this->generateUrl('admin_user_list'));
 		}
 
 		return $this->render('OpenDeviceLabAdminBundle:Users:detail.html.twig', array (
 			'user' => $user,
 			'form' => $form->createView()
 		));
+	}
+
+	/**
+	* @Route("/users/create", name="admin_user_create")
+	* @Method({"GET|POST"})
+	*/
+	public function createAction(Request $request) {
+		
 	}
 }

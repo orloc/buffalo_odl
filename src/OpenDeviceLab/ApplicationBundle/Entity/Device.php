@@ -58,6 +58,15 @@ class Device {
 		$this->setCreatedAt(new \Datetime());
 	}
 
+	public function getNiceStatus(){ 
+		switch($this->getStatus()){
+			case 1: return 'Available';
+			case 2: return 'In Use';
+			case 3: return 'Wanted';
+			default: return;
+		}
+	}
+
 	//------------------------------------------------
 
     /**
@@ -183,5 +192,28 @@ class Device {
     public function getStatus()
     {
         return $this->status;
+    }
+
+    /**
+     * Set donated_by
+     *
+     * @param string $donatedBy
+     * @return Device
+     */
+    public function setDonatedBy($donatedBy)
+    {
+        $this->donated_by = $donatedBy;
+    
+        return $this;
+    }
+
+    /**
+     * Get donated_by
+     *
+     * @return string 
+     */
+    public function getDonatedBy()
+    {
+        return $this->donated_by;
     }
 }

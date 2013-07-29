@@ -1,6 +1,17 @@
+body {
+  background-color: #eff3ff;
+}
 .center {
   float: none;
   margin: auto;
+}
+.logo h2,
+.logo h1 {
+  font-family: 'Orbitron', sans-serif;
+}
+.logo h2 span,
+.logo h1 span {
+  color: #d44a13;
 }
 #login {
   float: none;
@@ -17,14 +28,36 @@
   margin-left: 5%;
   margin-right: 5%;
 }
-#login div h2 {
+#login div h2,
+#login div h1 {
   font-family: 'Orbitron', sans-serif;
 }
-#login div h2 span {
+#login div h2 span,
+#login div h1 span {
   color: #d44a13;
 }
 #login div form {
   display: block;
   float: none;
   margin: auto;
+}
+#content div a {
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+#content table#list {
+  background-color: #D0DCFF;
+}
+#content table#list tr:nth-child(even) {
+  background-color: #E9EFFF;
+}
+#content table#list thead {
+  color: #ec642e;
+  background-color: #364450;
+}
+#content table#list thead th {
+  text-align: center;
+}
+#content table#list tbody td {
+  text-align: center;
 }

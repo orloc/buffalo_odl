@@ -1,0 +1,11 @@
+{% set active = 'devices' %}
+{% extends 'OpenDeviceLabAdminBundle:Panel:landing.html.twig' %}
+
+{% block body %}
+		<a class="btn btn-link" href="{{ path("admin_device_list") }}"> Back </a>
+		{{ form_start(form) }}
+			{{ form_widget(form) }}
+			<button class="btn btn-small" type="submit">Submit</button>
+		{{ form_end(form) }}
+
+{% endblock %}

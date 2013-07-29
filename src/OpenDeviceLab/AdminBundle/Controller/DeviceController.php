@@ -28,7 +28,30 @@ class DeviceController extends Controller {
 
 	}
 
-	public function createAction() { 
+	/**
+	* @Route("/devices/create", name="admin_device_create")
+	* @Method({"GET|POST"})
+	*/
+	public function createAction(Request $request) { 
+
+		$form = $this->createForm(new Form\DeviceType());
+
+		$form->handleRequest($request);
+
+		if ($form->isValid()){ 
+			$entity = $form->getData();
+			$em = $this->getDoctrine()->getManager();
+
+			$em->persist($entity);
+			$em->flush();
+
+			$this->get('session')->getFlashBag()->add('success', sprintf('Device %s has been added successfully', $entity->getModel()));
+
+			return $this->redirect($this->generateUrl('admin_device_list'));
+		}
+		return $this->render('OpenDeviceLabAdminBundle:Devices:detail.html.twig', array ( 
+			'form' => $form->createView()
+		));
 
 	}
 

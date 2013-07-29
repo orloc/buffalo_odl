@@ -1,7 +1,23 @@
+body { 
+	background-color: lighten(#d0dcff, 6%);
+}
+
 .center { 
 	float: none;
 	margin: auto;
 }
+
+.logo { 
+	h2, h1{
+		font-family: 'Orbitron', sans-serif;
+		
+		span {
+			color: #d44a13;
+		}
+	}
+
+}
+
 #login { 
 	.center;
 	margin-top: 10%;
@@ -14,18 +30,43 @@
 		.center;
 		margin-left: 5%;
 		margin-right: 5%;
-
-		h2{
-			font-family: 'Orbitron', sans-serif;
-			
-			span {
-				color: #d44a13;
-			}
-		}
-
+		
+		.logo;
+		
 		form {
 			display: block;
 			.center;
 		}
 	}
 }
+
+#content { 
+	div a {
+		margin-bottom: 20px;
+		margin-left: 10px;
+	}
+	table#list {
+
+		background-color: #D0DCFF;
+		tr:nth-child(even) {
+			background-color:#E9EFFF; 
+		}
+
+		thead {
+			th { 
+				text-align: center;
+			}
+
+			color: lighten(#d44a13, 10%);
+			background-color: #364450;
+		}
+		
+		tbody { 
+			td { 
+				text-align: center;
+			}
+		}
+
+	}
+}
+
