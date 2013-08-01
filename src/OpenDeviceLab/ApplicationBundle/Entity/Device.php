@@ -14,7 +14,8 @@ class Device {
 
 	const STATUS_AVAILABLE = 1,
 		  STATUS_IN_USE = 2,
-		  STATUS_WANTED = 3;
+		  STATUS_WANTED = 3,
+		  STATUS_DISABLED = 4;
 
 	/**
 	* @ORM\Id
@@ -63,6 +64,7 @@ class Device {
 			case 1: return 'Available';
 			case 2: return 'In Use';
 			case 3: return 'Wanted';
+			case 4: return 'Disabled';
 			default: return;
 		}
 	}

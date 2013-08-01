@@ -33,7 +33,8 @@ class DeviceType extends AbstractType {
 			'choices' => array (
 				Device::STATUS_AVAILABLE => 'Available',
 				Device::STATUS_IN_USE => 'In Use',
-				Device::STATUS_WANTED => 'Wanted'
+				Device::STATUS_WANTED => 'Wanted',
+				Device::STATUS_DISABLED => 'Disabled'
 			),
 			'constraints' => new Assert\NotBlank()
 		));
