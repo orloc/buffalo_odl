@@ -48,7 +48,7 @@
 						{{ device.getCreatedAt() | date('m/d/Y') }}
 					</td>
 					<td>
-						<span class="label {% if device.getStatus() == 1%}label-success {% else if device.getStatus() == 4 %} label-important {% else %} label-warning {% endif %}">{{ device.getNiceStatus() }}</span>
+						<span class="label {% if device.getStatus() == 1%}label-success {% elseif device.getStatus() == 4 %} label-important {% else %} label-warning {% endif %}">{{ device.getNiceStatus() }}</span>
 					</td>
 				</tr>
 			{% endfor %}
