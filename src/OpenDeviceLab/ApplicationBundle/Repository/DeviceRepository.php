@@ -12,7 +12,7 @@ class DeviceRepository extends EntityRepository {
 
 		$qb =  $this->createQueryBuilder('d');
 
-		return $qb->where('d.status != :s OR d.status != :s0')
+		return $qb->where('d.status != :s AND d.status != :s0')
 			->setParameter('s', Device::STATUS_WANTED)
 			->setParameter('s0', Device::STATUS_DISABLED)
 			->getQuery()
