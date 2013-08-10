@@ -40,10 +40,6 @@ class DeviceDonationType extends ContactType {
             ))
             ->add('organization', 'text', array ( 
                 'required' => false
-            ))
-            ->add('comment', 'textarea', array ( 
-                'label' => 'Comments',
-                'required' => false
             ));
     }
 }

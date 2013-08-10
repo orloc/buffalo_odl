@@ -50,13 +50,26 @@ class User implements UserInterface {
 	*/
 	private $roles;
 
-	private $devices; 
+	private $contributed_devices; 
+
+    /**
+    * @ORM\OneToMany(targetEntity="Appointment", mappedBy="user")
+    */
+    private $appointments;
 
 	/**
 	* @ORM\Column(type="boolean", nullable=true)
 	*/
 	private $is_active;
 	
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->appointments = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
 	public function getUsername() { 
 		return $this->username;
 	}
@@ -217,5 +230,38 @@ class User implements UserInterface {
         $this->password = $password;
     
         return $this;
+    }
+    
+    /**
+     * Add appointments
+     *
+     * @param \OpenDeviceLab\ApplicationBundle\Entity\Appointment $appointments
+     * @return User
+     */
+    public function addAppointment(\OpenDeviceLab\ApplicationBundle\Entity\Appointment $appointments)
+    {
+        $this->appointments[] = $appointments;
+    
+        return $this;
+    }
+
+    /**
+     * Remove appointments
+     *
+     * @param \OpenDeviceLab\ApplicationBundle\Entity\Appointment $appointments
+     */
+    public function removeAppointment(\OpenDeviceLab\ApplicationBundle\Entity\Appointment $appointments)
+    {
+        $this->appointments->removeElement($appointments);
+    }
+
+    /**
+     * Get appointments
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getAppointments()
+    {
+        return $this->appointments;
     }
 }
