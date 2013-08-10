@@ -30,6 +30,14 @@ class DeviceDonationType extends ContactType {
                 'constraints' => new Assert\NotBlank(), 
                 'label' => 'Manufacturer'
             ))
+            ->add('wear', 'choice', array (
+                'choices' => array ( 
+                    'test', 
+                    'test', 
+                    'test', 
+                ),
+                'constraints' => new Assert\NotBlank()
+            ))
             ->add('organization', 'text', array ( 
                 'required' => false
             ))

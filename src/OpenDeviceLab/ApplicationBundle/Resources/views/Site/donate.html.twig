@@ -7,8 +7,28 @@
     <div class="content row-fluid">
         <div class="span12 main_content_wrapper">
             {{ form_start(form) }}
-                {{ form_widget(form) }}
-                <button class="btn btn-small" type="submit">Submit</button>
+            <fieldset>
+                <legend>Donate a Device!</legend>
+                <div class="span5">
+                    <h4>About your device</h4>
+                    {{ form_row(form.device_name) }}
+                    {{ form_row(form.operating_system) }}
+                    {{ form_row(form.manufacturer) }}
+                    {{ form_row(form.wear) }}
+
+                </div>
+                <div class="span5 pull-right">
+                    <h4>About you</h4>
+                    {{ form_row(form.first_name) }}
+                    {{ form_row(form.last_name) }}
+                    {{ form_row(form.organization) }}
+                    {{ form_row(form.email) }}
+                </div>
+                <div class="row-fluid">
+                    {{ form_row(form.comment) }}
+                    <button class="btn btn-small" type="submit">Submit</button>
+                </div>
+            </fieldset>
             {{ form_end(form) }}
         </div>
     </div>
