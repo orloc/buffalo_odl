@@ -88,6 +88,7 @@ div#breadcrumbs {
   background-color: #d44a13;
   font-family: 'Armata', sans-serif;
   font-size: 18px;
+  height: 50px;
 }
 div#breadcrumbs div div#bread-wrap {
   margin: 5px;

@@ -33,4 +33,17 @@ class DefaultController extends Controller {
 			'wanted' => $wanted
 		));
 	}
+
+    /**
+     * @Route("/donate", name="_donate")
+     * @Method({"GET","POST"})
+     */
+    public function donateAction (Request $request) { 
+        
+        $donateForm = $this->createForm(new Form\DeviceDonationType());
+
+        return $this->render('OpenDeviceLabApplicationBundle:Site:donate.html.twig', array (
+            'form' => $donateForm->createView()
+        ));  
+    }
 }
