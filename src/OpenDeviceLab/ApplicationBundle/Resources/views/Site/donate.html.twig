@@ -11,18 +11,18 @@
                 <legend>Donate a Device!</legend>
                 <div class="span5">
                     <h4>About your device</h4>
-                    {{ form_row(form.device_name) }}
-                    {{ form_row(form.operating_system) }}
-                    {{ form_row(form.manufacturer) }}
-                    {{ form_row(form.wear) }}
+                    {{ form_row(form.device.model) }}
+                    {{ form_row(form.device.operating_system) }}
+                    {{ form_row(form.device.manufacturer) }}
+                    {{ form_row(form.device.wear) }}
 
                 </div>
                 <div class="span5 pull-right">
                     <h4>About you</h4>
-                    {{ form_row(form.first_name) }}
-                    {{ form_row(form.last_name) }}
-                    {{ form_row(form.organization) }}
-                    {{ form_row(form.email) }}
+                    {{ form_row(form.user.first_name) }}
+                    {{ form_row(form.user.last_name) }}
+                    {{ form_row(form.user.organization) }}
+                    {{ form_row(form.user.email) }}
                     <button class="btn btn-small" type="submit">Submit</button>
                 </div>
             </fieldset>

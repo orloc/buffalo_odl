@@ -15,7 +15,12 @@ class Device {
 	const STATUS_AVAILABLE = 1,
 		  STATUS_IN_USE = 2,
 		  STATUS_WANTED = 3,
-		  STATUS_DISABLED = 4;
+          STATUS_DISABLED = 4, 
+          STATUS_DONATED = 5;
+
+    const WEAR_NEW = 1,
+          WEAR_USED = 2,
+          WEAR_WORN = 3;
 
 	/**
 	* @ORM\Id
@@ -38,6 +43,11 @@ class Device {
 	* @ORM\Column(type="string")
 	*/
 	protected $operating_system;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $wear;
 
 	/**
 	* @ORM\Column(type="string")
@@ -217,5 +227,28 @@ class Device {
     public function getDonatedBy()
     {
         return $this->donated_by;
+    }
+
+    /**
+     * Set wear
+     *
+     * @param integer $wear
+     * @return Device
+     */
+    public function setWear($wear)
+    {
+        $this->wear = $wear;
+    
+        return $this;
+    }
+
+    /**
+     * Get wear
+     *
+     * @return integer 
+     */
+    public function getWear()
+    {
+        return $this->wear;
     }
 }

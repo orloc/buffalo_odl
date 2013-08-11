@@ -45,6 +45,11 @@ class User implements UserInterface {
 	*/
 	private $email;
 
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $organization;
+
 	/** 
 	* @ORM\Column(type="array") 
 	*/
@@ -263,5 +268,28 @@ class User implements UserInterface {
     public function getAppointments()
     {
         return $this->appointments;
+    }
+
+    /**
+     * Set organization
+     *
+     * @param string $organization
+     * @return User
+     */
+    public function setOrganization($organization)
+    {
+        $this->organization = $organization;
+    
+        return $this;
+    }
+
+    /**
+     * Get organization
+     *
+     * @return string 
+     */
+    public function getOrganization()
+    {
+        return $this->organization;
     }
 }

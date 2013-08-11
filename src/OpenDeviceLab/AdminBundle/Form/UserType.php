@@ -1,12 +1,11 @@
 <?php
 namespace OpenDeviceLab\AdminBundle\Form;
 
-use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
-class UserType extends AbstractType { 
+class UserType extends BaseUserType { 
 
 	public function getName() {
 		return 'user';
@@ -14,19 +13,9 @@ class UserType extends AbstractType {
 
 	public function buildForm(FormBuilderInterface $builder, array $options) {
 
-		$builder->add('username', 'text', array(
-				'constraints' => new Assert\NotBlank()
-			))
-			->add('first_name', 'text', array(
-				'constraints' => new Assert\NotBlank()
-			))
-			->add('last_name', 'text', array(
-				'constraints' => new Assert\NotBlank()
-			))
-			->add('email', 'email', array(
-				'constraints' => new Assert\NotBlank()
-			))
-			->add('roles', 'choice', array(
+        parent::buildForm($builder, $options);
+
+		$builder->add('roles', 'choice', array(
 				'choices' => array(
 					'ROLE_USER',
 					'ROLE_ADMIN',
