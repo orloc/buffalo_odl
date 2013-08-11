@@ -14,10 +14,7 @@ class BaseUserType extends AbstractType {
 
 	public function buildForm(FormBuilderInterface $builder, array $options) {
 
-		$builder->add('username', 'text', array(
-				'constraints' => new Assert\NotBlank()
-			))
-			->add('first_name', 'text', array(
+		$builder->add('first_name', 'text', array(
 				'constraints' => new Assert\NotBlank()
 			))
 			->add('last_name', 'text', array(

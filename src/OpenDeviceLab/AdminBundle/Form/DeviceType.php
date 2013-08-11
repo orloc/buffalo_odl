@@ -18,7 +18,10 @@ class DeviceType extends BaseDeviceType {
 
         parent::buildForm($builder, $options);
 		
-		$builder->add('status', 'choice', array (
+        $builder->add('donated_by', 'text', array (
+                'constraints' => new Assert\NotBlank()
+            ))
+            ->add('status', 'choice', array (
 			'choices' => array (
 				Device::STATUS_AVAILABLE => 'Available',
 				Device::STATUS_IN_USE => 'In Use',

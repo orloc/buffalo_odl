@@ -26,9 +26,6 @@ class BaseDeviceType extends AbstractType {
 		->add('operating_system', 'text', array (
 			'constraints' => new Assert\NotBlank()
 		))
-		->add('donated_by', 'text', array (
-			'constraints' => new Assert\NotBlank()
-		))
         ->add('wear', 'choice', array ( 
             'constraints' => new Assert\NotBlank(),
             'choices' => array (

@@ -15,7 +15,10 @@ class UserType extends BaseUserType {
 
         parent::buildForm($builder, $options);
 
-		$builder->add('roles', 'choice', array(
+        $builder->add('username', 'text', array(
+				'constraints' => new Assert\NotBlank()
+			))
+            ->add('roles', 'choice', array(
 				'choices' => array(
 					'ROLE_USER',
 					'ROLE_ADMIN',
