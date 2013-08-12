@@ -31,12 +31,12 @@ class User implements UserInterface {
 	private $last_name;
 
 	/**
-	* @ORM\Column(type="string", length=32, unique=true)
+	* @ORM\Column(type="string", length=32, unique=true, nullable=true)
 	*/
 	private $username;
 
 	/**
-	* @ORM\Column(type="string", length=60)
+	* @ORM\Column(type="string", length=60, nullable=true)
 	*/
 	private $password;
 	
@@ -51,7 +51,7 @@ class User implements UserInterface {
     private $organization;
 
 	/** 
-	* @ORM\Column(type="array") 
+	* @ORM\Column(type="array", nullable=true) 
 	*/
 	private $roles;
 
@@ -73,6 +73,10 @@ class User implements UserInterface {
     public function __construct()
     {
         $this->appointments = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    public function getFullName() { 
+        return $this->getFirstName().' '.$this->getLastName();
     }
 
 	public function getUsername() { 

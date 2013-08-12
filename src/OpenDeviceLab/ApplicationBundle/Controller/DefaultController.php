@@ -10,6 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 use OpenDeviceLab\ApplicationBundle\Form;
+use OpenDeviceLab\ApplicationBundle\Entity;
 
 class DefaultController extends Controller { 
 	
@@ -26,7 +27,6 @@ class DefaultController extends Controller {
 		$devices = $repo->getAvailable();
 		$wanted = $repo->getWanted();
 
-		#$available_devices = $em->getRepository('OpenDeviceLabApplicationBundle:Device')->
 		return $this->render('OpenDeviceLabApplicationBundle:Site:landing.html.twig', array ( 
 			'contact' => $contactForm->createView(),
 			'available' => $devices,
@@ -45,7 +45,18 @@ class DefaultController extends Controller {
         $donateForm->handleRequest($request);
 
         if ($donateForm->isValid()){ 
+            $entities = $donateForm->getData();    
+            $em = $this->getDoctrine()->getManager(); 
             
+            if ($entities['device'] instanceof Entity\Device) { 
+                $entities['device']->setDonatedBy($entities['user']->getFullName())
+                    ->setStatus(Entity\Device::STATUS_DONATED);
+            }
+
+            foreach ($entities as $e) {
+                $em->persist($e);
+            }
+            $em->flush();
         }
 
         return $this->render('OpenDeviceLabApplicationBundle:Site:donate.html.twig', array (
