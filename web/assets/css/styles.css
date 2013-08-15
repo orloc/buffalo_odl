@@ -9,6 +9,10 @@ body h2,
 body h3 {
   font-family: 'Alegreya', serif;
 }
+body h2 {
+  padding-left: 15px;
+  margin-bottom: 0px;
+}
 body p,
 body thead td,
 body address {
@@ -235,6 +239,16 @@ div#content-wrapper div.content div.main_content_wrapper div#device-list table t
 div#content-wrapper div.content div.main_content_wrapper div#device-list table tbody td {
   text-align: center;
   border: 0;
+}
+div#content-wrapper div.content div.main_content_wrapper div#sponsors {
+  margin: 20px auto 30px auto;
+}
+div#content-wrapper div.content div.main_content_wrapper div#sponsors :first-child {
+  margin-left: 0px;
+}
+div#content-wrapper div.content div.main_content_wrapper div#sponsors a {
+  margin-left: 40px;
+  margin-right: 40px;
 }
 div#content-wrapper div.content div.main_content_wrapper div#contact {
   margin-bottom: 20px;
