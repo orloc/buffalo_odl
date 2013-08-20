@@ -64,4 +64,13 @@ swiftmailer:
     host:      %mailer_host%
     username:  %mailer_user%
     password:  %mailer_password%
-    spool:     { type: memory }
+    #spool:     { type: memory }
+
+# Genemu Captcha
+genemu_form:
+    captcha:
+        width: 150
+        height: 60
+        chars: '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        length: 6
+        font_size: 20

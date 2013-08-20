@@ -31,11 +31,17 @@
                 <div class="container-fluid">
                     <div id="bread-wrap" class="row-fluid">
                     {% block breadcrumbs %}
-                        <div id="nav" class="span9">
+                        <div id="nav" class="span8">
                             <a href="#what-is"><i class="icon-book"></i></a>
                             <a href="#device-list"><i class="icon-mobile-phone"></i></a>
                             <a href="#contact"><i class="icon-home"></i></a>
                         </div>
+						<div class="span1">
+							{% if sent is defined and sent %}
+								You're E-Mail has been sent successfuly!	
+							{% endif %}
+						</div>
+
                         <div class="span3">
                             <a href="#banner" id="b2top" class="link pull-right">Back to top</a>
                         </div>

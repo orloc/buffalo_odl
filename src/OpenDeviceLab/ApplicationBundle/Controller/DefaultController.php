@@ -16,21 +16,45 @@ class DefaultController extends Controller {
 	
 	/**
 	* @Route("/", name="_landing")
-	* @Method({"GET"})
+	* @Method({"GET|POST"})
 	*/
 	public function indexAction(Request $request) { 
 		$contactForm =	$this->createForm(new Form\ContactType()); 
 		
 		$em = $this->getDoctrine()->getManager();
 		$repo = $em->getRepository('OpenDeviceLabApplicationBundle:Device');
-
+		
 		$devices = $repo->getAvailable();
 		$wanted = $repo->getWanted();
+
+		$contactForm->handleRequest($request);
+
+		/* 
+		* @TODO 
+		* Clean this up and abstract out
+		*/
+		if ($contactForm->isValid()){
+			$data = $contactForm->getData();	
+
+			$message = \Swift_Message::newInstance()
+				->setSubject('Contact')
+				->setFrom($data['email'])
+				->setTo('buffodl@gmail.com')
+				->setBody("${data['first_name']} - ${data['last_name']} \n\n
+						   ${data['message']}"
+				);
+
+			$sent = $this->get('mailer')->send($message);
+		}
+
+		if (isset($sent))
+			var_dump($sent);
 
 		return $this->render('OpenDeviceLabApplicationBundle:Site:landing.html.twig', array ( 
 			'contact' => $contactForm->createView(),
 			'available' => $devices,
-			'wanted' => $wanted
+			'wanted' => $wanted,
+			'sent' => isset($sent) ? $sent : null 
 		));
 	}
 

@@ -35,6 +35,9 @@ class ContactType extends AbstractType {
 					'trim' => true,
 					'constraints' => new Assert\NotBlank(),
 					'label' => 'Message:'
+				))
+				->add('captcha', 'genemu_captcha', array ( 
+					'constraints' => new Assert\NotBlank()
 				));
 	}
 }
