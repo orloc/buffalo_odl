@@ -45,10 +45,10 @@ class DefaultController extends Controller {
 						   ${data['message']}"
 				);
 
-			switch ($this->get('mailer')->send($message)) {
-				case 1: $sent = true; break;
-				case 0: $sent = false; break;
-				default: $sent = null; break;
+			if ($this->get('mailer')->send($message)) {
+				$this->get('session')->getFlashBag()->add('success', 'Thanks for getting in touch! We will be in touch within 48 hours.');
+			} else { 
+				$this->get('session')->getFlashBag()->add('notice', 'We were unable to send your e-mail at this time, please try again later.');
 			}
 		}
 
@@ -56,8 +56,6 @@ class DefaultController extends Controller {
 			'contact' => $contactForm->createView(),
 			'available' => $devices,
 			'wanted' => $wanted,
-			'sent' => $sent,
-			'id' => mt_rand(0, 1000)
 		));
 	}
 
