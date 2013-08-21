@@ -6,7 +6,9 @@ body {
 }
 body h1,
 body h2,
-body h3 {
+body h3,
+body h4,
+body legend {
   font-family: 'Alegreya', serif;
 }
 body h2 {
@@ -15,7 +17,8 @@ body h2 {
 }
 body p,
 body thead td,
-body address {
+body address,
+body label {
   font-family: 'Exo', sans-serif;
 }
 body a:hover {
@@ -105,70 +108,13 @@ div#breadcrumbs div div#bread-wrap i {
 div#breadcrumbs div div#bread-wrap i:hover {
   color: #cacaca;
 }
-div#breadcrumbs #b2top {
+div#breadcrumbs .b2top {
   text-align: center;
   margin: 10px;
   color: white;
 }
-div#breadcrumbs #b2top:hover {
+div#breadcrumbs .b2top:hover {
   color: #cacaca;
-}
-div#navigation {
-  background-color: white;
-}
-div#navigation div#nav-wrapper {
-  float: none;
-  margin-left: auto;
-  margin-right: auto;
-  width: 82.97872340425532%;
-}
-div#navigation div#nav-wrapper div.span4 {
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-div#navigation div#nav-wrapper div.span4 a {
-  float: none;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  color: #a7a7a7;
-  width: 144px;
-  height: 144px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  line-height: 144px;
-  border-radius: 50%;
-  box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
-}
-div#navigation div#nav-wrapper div.span4#about_us a {
-  background-color: #808DB2;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#808db2), to(#707da2));
-  background-image: -webkit-linear-gradient(top, #f6f7f7, #707da2);
-  background-image: -moz-linear-gradient(top, #f6f7f7, #707da2);
-  background-image: -ms-linear-gradient(top, #f6f7f7, #707da2);
-  background-image: -o-linear-gradient(top, #f6f7f7, #707da2);
-}
-div#navigation div#nav-wrapper div.span4#devices a {
-  background-color: #808DB2;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#808db2), to(#707da2));
-  background-image: -webkit-linear-gradient(top, #f6f7f7, #707da2);
-  background-image: -moz-linear-gradient(top, #f6f7f7, #707da2);
-  background-image: -ms-linear-gradient(top, #f6f7f7, #707da2);
-  background-image: -o-linear-gradient(top, #f6f7f7, #707da2);
-}
-div#navigation div#nav-wrapper div.span4#locations a {
-  background-color: #B3CC92;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#b3cc92), to(#a3bc82));
-  background-image: -webkit-linear-gradient(top, #f6f7f7, #a3bc82);
-  background-image: -moz-linear-gradient(top, #f6f7f7, #a3bc82);
-  background-image: -ms-linear-gradient(top, #f6f7f7, #a3bc82);
-  background-image: -o-linear-gradient(top, #f6f7f7, #a3bc82);
-}
-div#navigation div#nav-wrapper div.span4 span {
-  font-size: x-large;
-  font-family: 'Alegreya', serif;
-  color: #d44a13;
 }
 div#content-wrapper {
   background-color: white;
@@ -250,6 +196,9 @@ div#content-wrapper div.content div.main_content_wrapper div#sponsors a {
   margin-left: 40px;
   margin-right: 40px;
 }
+div#content-wrapper div.content div.main_content_wrapper div#donate h2 {
+  margin-bottom: 10px;
+}
 div#content-wrapper div.content div.main_content_wrapper div#contact {
   margin-bottom: 20px;
 }
@@ -271,6 +220,9 @@ div#content-wrapper div.content div.main_content_wrapper div#contact form textar
   height: 125px;
   max-height: 125px;
   min-height: 125px;
+}
+div#content-wrapper div.content div.main_content_wrapper div#contact form input#contacttype_captcha {
+  margin: 0 0 0 20px;
 }
 div#content-wrapper div#map-canvas {
   height: 500px;

@@ -26,7 +26,8 @@ class DeviceType extends BaseDeviceType {
 				Device::STATUS_AVAILABLE => 'Available',
 				Device::STATUS_IN_USE => 'In Use',
 				Device::STATUS_WANTED => 'Wanted',
-				Device::STATUS_DISABLED => 'Disabled'
+				Device::STATUS_DISABLED => 'Disabled',
+				Device::STATUS_DONATED => 'Donated'
 			),
 			'constraints' => new Assert\NotBlank()
 		));

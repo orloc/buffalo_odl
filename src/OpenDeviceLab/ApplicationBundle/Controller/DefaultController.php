@@ -33,6 +33,7 @@ class DefaultController extends Controller {
 		* @TODO 
 		* Clean this up and abstract out
 		*/
+		$sent = null;
 		if ($contactForm->isValid()){
 			$data = $contactForm->getData();	
 
@@ -44,17 +45,19 @@ class DefaultController extends Controller {
 						   ${data['message']}"
 				);
 
-			$sent = $this->get('mailer')->send($message);
+			switch ($this->get('mailer')->send($message)) {
+				case 1: $sent = true; break;
+				case 0: $sent = false; break;
+				default: $sent = null; break;
+			}
 		}
-
-		if (isset($sent))
-			var_dump($sent);
 
 		return $this->render('OpenDeviceLabApplicationBundle:Site:landing.html.twig', array ( 
 			'contact' => $contactForm->createView(),
 			'available' => $devices,
 			'wanted' => $wanted,
-			'sent' => isset($sent) ? $sent : null 
+			'sent' => $sent,
+			'id' => mt_rand(0, 1000)
 		));
 	}
 
@@ -81,6 +84,8 @@ class DefaultController extends Controller {
                 $em->persist($e);
             }
             $em->flush();
+
+			$this->get('session')->getFlashBag()->add('success', 'Your Donation Application has been submitted and we will be in touch to schedule an appointment, thank you for being awesome!');
         }
 
         return $this->render('OpenDeviceLabApplicationBundle:Site:donate.html.twig', array (

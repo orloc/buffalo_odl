@@ -1,0 +1,10 @@
+{% for alert_cat in [ 'info', 'success', 'warning', 'error'] %}
+{% if app.session.FlashBag.has(alert_cat) %}
+{% for alert in app.session.flashbag.get(alert_cat) %} 
+<div class="alert alert-{{ alert_cat }}" >
+    <button class="close" data-dismiss="alert">×</button>
+    {{ alert|trans }}
+</div>
+{% endfor %}
+{% endif %}
+{% endfor %}

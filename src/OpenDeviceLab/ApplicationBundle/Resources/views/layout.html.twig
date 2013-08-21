@@ -31,19 +31,23 @@
                 <div class="container-fluid">
                     <div id="bread-wrap" class="row-fluid">
                     {% block breadcrumbs %}
-                        <div id="nav" class="span8">
+                        <div id="nav" class="span4">
                             <a href="#what-is"><i class="icon-book"></i></a>
                             <a href="#device-list"><i class="icon-mobile-phone"></i></a>
                             <a href="#contact"><i class="icon-home"></i></a>
                         </div>
-						<div class="span1">
-							{% if sent is defined and sent %}
-								You're E-Mail has been sent successfuly!	
+						<div class="span3">
+							{% if sent != null %}
+								{% if sent %}
+									<span>You're E-Mail has been sent successfuly!</span>
+								{% else %}
+									<span>Sorry, we can't send your e-mail right now!</span>
+								{% endif %}
 							{% endif %}
 						</div>
 
-                        <div class="span3">
-                            <a href="#banner" id="b2top" class="link pull-right">Back to top</a>
+                        <div class="span5">
+                            <a href="#banner" id="b2top" class="b2top link pull-right">Back to top</a>
                         </div>
                     {% endblock %}
                     </div>
@@ -55,39 +59,16 @@
 					<h1>
 						Buffalo 
 						<br/>
-						<span id="logo_wrapper"><span class="color">o</span>pen <span class="color">d</span>evice <span class="color">l</span>ab</span>
+						<span id="logo_wrapper"><span class="color">O</span>pen <span class="color">D</span>evice <span class="color">L</span>ab</span>
 					</h1>
 				</div>
+				<!--
 				<div class="span3 well" style="background-color: rgba(255,255,255,0.2);margin-top:20px;">
 					<p class="text-center" style="display:block; ">This site is currently under heavy construction, please bear with us while we polish our finishing touches<span class="muted"><i> - Buffalo ODL</i></span></p>
 				</div>
+				-->
 			</div>
 		</div>
-		<!--
-		<div id="navigation" class="row-fluid">
-			<div id="nav-wrapper">
-				<div id="about_us" class="span4">
-					<a href="#bullets">
-						<img src="{{ asset('/assets/img/light-blownup.png') }}">
-						<span class="link-over">About Us</span>
-					</a>
-				</div>
-				<div id="devices" class="span4">
-					<a href="#device-list">
-						<img src="{{ asset('/assets/img/mobile-overlay.png') }}">
-						<span class="link-over">Devices</span>
-						</a>
-
-				</div>
-				<div id="locations" class="span4">
-					<a href="#map-canvas">
-						<img src="{{ asset('/assets/img/house-blownup.png') }}">
-						<span class="link-over">Locations</span>
-					</a>
-				</div>
-			</div>
-		</div>
-		-->
 		<div id="content-wrapper">
 			{% block body %}
 			{% endblock %}
@@ -113,6 +94,7 @@
 			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{ maps_key }}&sensor=true">
 	</script>
 
+			<script src="{{ asset('/bundles/twitter/bootstrap/docs/assets/js/bootstrap.min.js') }}"></script>
 			<script src="{{asset('/assets/js/main.js') }}"></script>
 			<script src="{{asset('/assets/js/map.js') }}"></script>
 		{% endblock %}

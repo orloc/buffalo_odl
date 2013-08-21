@@ -69,8 +69,8 @@ swiftmailer:
 # Genemu Captcha
 genemu_form:
     captcha:
-        width: 150
+        width: 120
         height: 60
-        chars: '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-        length: 6
-        font_size: 20
+        chars: '0123456789ABCDEFGHIJKLMNPQRSTUVWXYZ'
+        length: 4
+        font_size: 22

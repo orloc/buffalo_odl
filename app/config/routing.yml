@@ -4,3 +4,6 @@ applicationBundle:
 
 adminBundle: 
  resource: "@OpenDeviceLabAdminBundle/Resources/config/routing.yml"
+
+genemu_base64:
+ resource: "@GenemuFormBundle/Resources/config/routing/base64.xml"
