@@ -24,8 +24,8 @@ class DefaultController extends Controller {
 		$em = $this->getDoctrine()->getManager();
 		$repo = $em->getRepository('OpenDeviceLabApplicationBundle:Device');
 		
-		$devices = $repo->getAvailable()->getQuery()->getResults();
-		$wanted = $repo->getWanted()->getQuery()->getResults();
+		$devices = $repo->getAvailable()->getQuery()->getResult();
+		$wanted = $repo->getWanted()->getQuery()->getResult();
 
 		$contactForm->handleRequest($request);
 
