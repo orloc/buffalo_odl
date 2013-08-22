@@ -60,6 +60,11 @@ class Device {
 	protected $created_at;
 
 	/**
+	* @ORM\ManyToOne(targetEntity="Appointment", inversedBy="device")
+	*/
+	protected $reserved;
+
+	/**
 	* @ORM\Column(type="integer")
 	*/
 	protected $status;
@@ -250,5 +255,28 @@ class Device {
     public function getWear()
     {
         return $this->wear;
+    }
+
+    /**
+     * Set reserved
+     *
+     * @param \OpenDeviceLab\ApplicationBundle\Entity\Appointment $reserved
+     * @return Device
+     */
+    public function setReserved(\OpenDeviceLab\ApplicationBundle\Entity\Appointment $reserved = null)
+    {
+        $this->reserved = $reserved;
+    
+        return $this;
+    }
+
+    /**
+     * Get reserved
+     *
+     * @return \OpenDeviceLab\ApplicationBundle\Entity\Appointment 
+     */
+    public function getReserved()
+    {
+        return $this->reserved;
     }
 }

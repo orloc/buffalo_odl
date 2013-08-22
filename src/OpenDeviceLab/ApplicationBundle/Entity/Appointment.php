@@ -39,7 +39,7 @@ class Appointment {
     private $end_time;
 
     /** 
-     * @ORM\OneToMany(targetEntity="Device", mappedBy="reservation")
+     * @ORM\OneToMany(targetEntity="Device", mappedBy="reserved")
      */
     private $device;
 
@@ -134,6 +134,30 @@ class Appointment {
         return $this->end_time;
     }
 
+    
+    /**
+     * Set user
+     *
+     * @param \OpenDeviceLab\ApplicationBundle\Entity\User $user
+     * @return Appointment
+     */
+    public function setUser(\OpenDeviceLab\ApplicationBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+    
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \OpenDeviceLab\ApplicationBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
     /**
      * Add device
      *
@@ -165,28 +189,5 @@ class Appointment {
     public function getDevice()
     {
         return $this->device;
-    }
-
-    /**
-     * Set user
-     *
-     * @param \OpenDeviceLab\ApplicationBundle\Entity\User $user
-     * @return Appointment
-     */
-    public function setUser(\OpenDeviceLab\ApplicationBundle\Entity\User $user = null)
-    {
-        $this->user = $user;
-    
-        return $this;
-    }
-
-    /**
-     * Get user
-     *
-     * @return \OpenDeviceLab\ApplicationBundle\Entity\User 
-     */
-    public function getUser()
-    {
-        return $this->user;
     }
 }

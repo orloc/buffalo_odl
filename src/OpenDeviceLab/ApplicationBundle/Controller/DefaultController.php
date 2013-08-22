@@ -103,6 +103,7 @@ class DefaultController extends Controller {
 
         if ($appointmentForm->isValid()){
             $entity = $appointmentForm->getData();
+			var_dump($entity);die;
             $em = $this->getDoctrine()->getManager(); 
 
             $em->persist($e);

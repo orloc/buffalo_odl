@@ -17,7 +17,7 @@ class AppointmentType extends AbstractType {
 
     public function buildForm(FormBuilderInterface $builder, array $options) { 
 
-        $builder->add('device', 'entity', array (
+        $builder->add('devices', 'entity', array (
             'class' => 'OpenDeviceLab\ApplicationBundle\Entity\Device',
             'query_builder' => function (EntityRepository $er) { 
                     return $er->getAvailable();
@@ -25,7 +25,7 @@ class AppointmentType extends AbstractType {
             'property' => 'model', 
             'label' => 'Device', 
             'required' => true, 
-            'multiple' => false, 
+            'multiple' => true, 
             'constraints' => new Assert\NotBlank(), 
             'empty_value' => ' -- Select a Device -- '
         ))
@@ -44,7 +44,7 @@ class AppointmentType extends AbstractType {
 
     public function setDefaultOptions(OptionsResolverInterface $resolver) { 
         $resolver->setDefaults(array(
-            'data_class' => 'OpenDeviceLab\ApplicationBundle\Entity\User'
+            'data_class' => 'OpenDeviceLab\ApplicationBundle\Entity\Appointment'
         ));
     }
 }
