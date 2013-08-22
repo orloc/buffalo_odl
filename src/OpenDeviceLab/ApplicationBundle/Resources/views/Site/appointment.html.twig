@@ -1,0 +1,38 @@
+{% extends 'OpenDeviceLabApplicationBundle::layout.html.twig' %}
+{% block breadcrumbs %}
+<div class="span2 pull-right">
+    <a class="b2top" href="{{ path('_landing') }}">Back</a>
+</div>
+{% endblock %}
+{% block body %}
+    <div id="donate" class="content row-fluid">
+        <div class="span12 content_wrapper">
+			<br>
+
+			{% include 'OpenDeviceLabApplicationBundle::flashes.html.twig' %}
+            {{ form_start(form) }}
+            <fieldset>
+                <h2>Donate a Device!</h2>
+				<hr>
+                <div class="span5">
+                    <h3>About your device</h3>
+                    {{ form_row(form.device.model) }}
+                    {{ form_row(form.device.operating_system) }}
+                    {{ form_row(form.device.manufacturer) }}
+                    {{ form_row(form.device.wear) }}
+
+                </div>
+                <div class="span5 pull-right">
+                    <h3>About you</h3>
+                    {{ form_row(form.user.first_name) }}
+                    {{ form_row(form.user.last_name) }}
+                    {{ form_row(form.user.organization) }}
+                    {{ form_row(form.user.email) }}
+                    <button class="btn btn-small" type="submit">Submit</button>
+                </div>
+            </fieldset>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
+
