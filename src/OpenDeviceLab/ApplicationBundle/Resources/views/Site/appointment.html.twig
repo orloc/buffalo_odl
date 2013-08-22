@@ -13,12 +13,25 @@
             <fieldset>
                 <h2>Schedule an Appointment</h2>
 				<hr>
-                <div class="span5">
-                    {{ form_widget(form) }}
-                </div>
+                    {{ form_row(form.device) }}
+					<br>
+					{{ form_label(form.start_time,'Date') }}
+                    {{ form_widget(form.start_time.date) }}
+
+                    {{ form_label(form.start_time.time, 'at') }}
+                    {{ form_widget(form.start_time.time) }}
+
+
+                    {{ form_label(form.end_time,'threw') }}
+                    {{ form_widget(form.end_time) }}
             </fieldset>
+			<button class="btn btn-small" type="submit">Submit</button>
             {{ form_end(form) }}
         </div>
     </div>
 {% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+	<script src="{{asset('/bundles/bootstrap-datepicker/css/datepicker.css')}}"></script>
+{% endblock %} 
 

@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "29a051777466657f178345df3dcad7ff",
+    "hash": "ac057cb6372d6c8294ef4ba538d3e872",
     "packages": [
         {
             "name": "doctrine/common",
@@ -276,6 +276,51 @@
                 "orm"
             ],
             "time": "2013-05-11 07:51:12"
+        },
+        {
+            "name": "eternicode/bootstrap-datepicker",
+            "version": "dev-release",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eternicode/bootstrap-datepicker.git",
+                "reference": "7e1acf977703545486ca5403ce62aef2119ac9c2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eternicode/bootstrap-datepicker/zipball/7e1acf977703545486ca5403ce62aef2119ac9c2",
+                "reference": "7e1acf977703545486ca5403ce62aef2119ac9c2",
+                "shasum": ""
+            },
+            "require": {
+                "frameworks/jquery": ">=1.7.1",
+                "twitter/bootstrap": ">=2.0.4, <3.0"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "time": "2013-08-18 06:58:00"
+        },
+        {
+            "name": "frameworks/jquery",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/frameworks/jquery.git",
+                "reference": "2.0.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/frameworks/jquery/zipball/2.0.3",
+                "reference": "2.0.3",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "jQuery JavaScript Library",
+            "homepage": "http://jquery.com",
+            "time": "2013-07-10 19:39:27"
         },
         {
             "name": "genemu/form-bundle",
@@ -1312,9 +1357,9 @@
 
     ],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ],
+    "stability-flags": {
+        "eternicode/bootstrap-datepicker": 20
+    },
     "platform": {
         "php": ">=5.3.3"
     },

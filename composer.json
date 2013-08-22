@@ -21,7 +21,8 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "twitter/bootstrap": "2.2.2",
 		"ircmaxell/password-compat": "1.0.3",
-		"genemu/form-bundle": "2.2.*"
+		"genemu/form-bundle": "2.2.*",
+		"eternicode/bootstrap-datepicker": "dev-release"
     },
     "scripts": {
         "post-install-cmd": [
