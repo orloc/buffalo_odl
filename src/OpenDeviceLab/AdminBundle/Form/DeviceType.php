@@ -32,5 +32,4 @@ class DeviceType extends BaseDeviceType {
 			'constraints' => new Assert\NotBlank()
 		));
 	}
-
 }

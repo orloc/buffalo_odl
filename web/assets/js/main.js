@@ -8,16 +8,19 @@ $(document).ready(function(){
 		$(this).hide();
 	});
 
-	$('#navigation div a').each(function(){
-		$(this).hover(
-			function(){
-				$(this).find('img').hide().closest('a').find('.link-over').show();
-			},
-			function(){
-				$(this).find('.link-over').hide().closest('a').find('img').show();
-			}
-		);
-	});
+    $('div#mouse-overs span').each(function(){
+        $(this).hide();
+    });
+    $('div#mouse-overs').hide();
+    $('#nav a').each(function(){
+        var id = $(this).attr('id');
+        $(this).mouseover(function(){
+            navMouseOver('show', id);
+        }).mouseout(function(){ 
+            navMouseOver('hide', id);
+        });
+
+    });
 
 	$('div#device-list a').click(function() { 
 		if ($('#wanted-devices').is(':hidden')){
@@ -40,8 +43,6 @@ $(document).ready(function(){
 		}
 	});
 
-
-
 	$(window).scroll(function () { 
 		var div = $('#breadcrumbs');
 		if ($(this).scrollTop() != 0 ) {
@@ -56,5 +57,22 @@ $(document).ready(function(){
 		}
 	});
 });
+
+function navMouseOver(dir, id){
+    $('div#mouse-overs').find('span').each(function(){
+        var labId = id+'Lab';
+        if ($(this).attr('id') == labId) { 
+            console.log($(this).attr('id'),labId, dir);
+            if (dir == 'show') { 
+                $(this).show();    
+                $('div#mouse-overs').show();
+            } 
+            if (dir == 'hide') { 
+                $(this).hide();    
+                $('div#mouse-overs').hide();
+            }
+        }
+    });
+}
 
 

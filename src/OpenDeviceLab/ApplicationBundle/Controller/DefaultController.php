@@ -24,8 +24,8 @@ class DefaultController extends Controller {
 		$em = $this->getDoctrine()->getManager();
 		$repo = $em->getRepository('OpenDeviceLabApplicationBundle:Device');
 		
-		$devices = $repo->getAvailable();
-		$wanted = $repo->getWanted();
+		$devices = $repo->getAvailable()->getQuery()->getResults();
+		$wanted = $repo->getWanted()->getQuery()->getResults();
 
 		$contactForm->handleRequest($request);
 
@@ -46,7 +46,7 @@ class DefaultController extends Controller {
 				);
 
 			if ($this->get('mailer')->send($message)) {
-				$this->get('session')->getFlashBag()->add('success', 'Thanks for getting in touch! We will be in touch within 48 hours.');
+				$this->get('session')->getFlashBag()->add('success', 'Thanks for getting in touch! We do our best to respond within 48 hours.');
 			} else { 
 				$this->get('session')->getFlashBag()->add('notice', 'We were unable to send your e-mail at this time, please try again later.');
 			}
@@ -88,6 +88,29 @@ class DefaultController extends Controller {
 
         return $this->render('OpenDeviceLabApplicationBundle:Site:donate.html.twig', array (
             'form' => $donateForm->createView()
+        ));  
+    }
+
+    /**
+     * @Route("/appointments", name="_appointment")
+     * @Method({"GET|POST"})
+     */
+    public function appointmentAction (Request $request) { 
+        
+        $appointmentForm = $this->createForm(new Form\AppointmentType());
+
+        $appointmentForm->handleRequest($request);
+
+        if ($appointmentForm->isValid()){
+            $entity = $appointmentForm->getData();
+            $em = $this->getDoctrine()->getManager(); 
+
+            $em->persist($e);
+            $em->flush();
+        }
+
+        return $this->render('OpenDeviceLabApplicationBundle:Site:appointment.html.twig', array (
+            'form' => $appointmentForm->createView()
         ));  
     }
 }

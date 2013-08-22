@@ -8,27 +8,13 @@
     <div id="donate" class="content row-fluid">
         <div class="span12 content_wrapper">
 			<br>
-
 			{% include 'OpenDeviceLabApplicationBundle::flashes.html.twig' %}
             {{ form_start(form) }}
             <fieldset>
-                <h2>Donate a Device!</h2>
+                <h2>Schedule an Appointment</h2>
 				<hr>
                 <div class="span5">
-                    <h3>About your device</h3>
-                    {{ form_row(form.device.model) }}
-                    {{ form_row(form.device.operating_system) }}
-                    {{ form_row(form.device.manufacturer) }}
-                    {{ form_row(form.device.wear) }}
-
-                </div>
-                <div class="span5 pull-right">
-                    <h3>About you</h3>
-                    {{ form_row(form.user.first_name) }}
-                    {{ form_row(form.user.last_name) }}
-                    {{ form_row(form.user.organization) }}
-                    {{ form_row(form.user.email) }}
-                    <button class="btn btn-small" type="submit">Submit</button>
+                    {{ form_widget(form) }}
                 </div>
             </fieldset>
             {{ form_end(form) }}
