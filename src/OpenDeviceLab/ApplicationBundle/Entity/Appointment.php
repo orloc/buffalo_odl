@@ -186,7 +186,7 @@ class Appointment {
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getDevice()
+    public function getDevices()
     {
         return $this->device;
     }

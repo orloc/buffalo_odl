@@ -27,7 +27,6 @@ class AppointmentType extends AbstractType {
             'required' => true, 
             'multiple' => true, 
             'constraints' => new Assert\NotBlank(), 
-            'empty_value' => ' -- Select a Device -- '
         ))
         ->add('start_time', 'datetime', array ( 
 			'date_widget' => 'single_text',
