@@ -238,6 +238,9 @@ div#content-wrapper div.content div.main_content_wrapper div#contact form textar
 div#content-wrapper div.content div.main_content_wrapper div#contact form input#contacttype_captcha {
   margin: 0 0 0 20px;
 }
+div#content-wrapper div.content div.main_content_wrapper div#contact form button {
+  margin-top: 10px;
+}
 div#content-wrapper div#map-canvas {
   height: 500px;
   width: 100%;
@@ -288,6 +291,51 @@ div#footer #dev-links > a:first-of-type {
 }
 @media (max-width: 880px) {
   h1 span#logo_wrapper {
-    margin-left: 80px !important;
+    margin-left: 50px !important;
+  }
+  #top {
+    width: 16.893617021276597%;
+  }
+}
+@media (max-width: 800px) {
+  h1 span#logo_wrapper {
+    margin-left: 10px !important;
+  }
+  #top {
+    width: 18.893617021276597%;
+  }
+}
+@media (max-width: 750px) {
+  h1 span#logo_wrapper {
+    font-size: 35px !important;
+    margin-left: 10px !important;
+  }
+  #top {
+    width: 18.893617021276597%;
+  }
+  #what-is ul li {
+    margin-left: 0px !important;
+    display: block !important;
+    margin-top: 10px;
+    padding-left: 20px;
+  }
+  #what-is ul:first-child {
+    margin-right: 0px !important;
+  }
+  #contact-copy {
+    width: 100%;
+  }
+  #contact-form-div {
+    margin-top: 20px;
+    float: none;
+    clear: both;
+    width: 100%;
+  }
+  #contact-form-div form {
+    padding: 0px;
+  }
+  input#contacttype_captcha {
+    margin-left: 40px !important;
+    width: 62%;
   }
 }

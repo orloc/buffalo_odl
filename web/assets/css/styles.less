@@ -4,6 +4,7 @@
 @footerColor: #555C5C; 
 @accentColor: #D44A13;
 @span10Width: 82.97872340425532%;
+@span2Width: 14.893617021276595%;
 
 body { 
 	background: url('../img/noise_lines.png') repeat;
@@ -260,6 +261,10 @@ div#content-wrapper {
 					input#contacttype_captcha {
 						margin: 0 0 0 20px;
 					}
+
+					button { 
+						margin-top: 10px;
+					}
 				}
 			}
 		}
@@ -333,7 +338,72 @@ div#footer {
 @media (max-width: 880px){
 	h1 { 
 		span#logo_wrapper { 
-			margin-left: 80px !important;
+			margin-left: 50px !important;
 		}
 	}
+
+	#top {
+		width: @span2Width + 2%;		
+	}
+}
+
+@media (max-width: 800px){
+	h1 { 
+		span#logo_wrapper { 
+			margin-left: 10px !important;
+		}
+
+		}
+
+	#top {
+		width: @span2Width + 4%;		
+	}
+}
+
+@media (max-width: 750px) { 
+	h1 { 
+		span#logo_wrapper {
+			font-size: 35px !important;
+			margin-left: 10px !important;
+		}
+	}
+
+	#top {
+		width: @span2Width + 4%;		
+	}
+
+	#what-is { 
+		ul {
+			li { 
+				margin-left: 0px !important;
+				display: block !important;
+				margin-top: 10px;
+				padding-left: 20px;
+			}
+			&:first-child {
+				margin-right:0px !important;
+			}
+		}
+	}
+
+	#contact-copy {
+		width: 100%;
+	}
+	
+	#contact-form-div { 
+		margin-top: 20px;
+		float:none;
+		clear: both;
+		width: 100%;
+
+		form {
+			padding: 0px;
+		}
+	}
+
+	input#contacttype_captcha {
+		margin-left: 40px !important;
+		width:62%;
+	}
+
 }
