@@ -9,6 +9,8 @@ use Symfony\Component\Form\FormBuilder;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\EntityRepository;
 
+use OpenDeviceLab\ApplicationBundle\Entity\Device;
+
 class AppointmentType extends AbstractType { 
 
     public function getName() { 
@@ -20,7 +22,9 @@ class AppointmentType extends AbstractType {
         $builder->add('devices', 'entity', array (
             'class' => 'OpenDeviceLab\ApplicationBundle\Entity\Device',
             'query_builder' => function (EntityRepository $er) { 
-                    return $er->getAvailable();
+                    return $er->getAvailable()
+						->andWhere("d.status != :in_use")
+						->setParameter('in_use', Device::STATUS_IN_USE);
             },
             'property' => 'model', 
             'label' => 'Device', 

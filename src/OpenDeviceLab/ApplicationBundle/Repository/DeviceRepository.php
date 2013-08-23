@@ -8,21 +8,21 @@ use OpenDeviceLab\ApplicationBundle\Entity\Device;
 
 class DeviceRepository extends EntityRepository { 
 
-	public function getAvailable(){
+	public function getAvailable($alias='d'){
 
-		$qb =  $this->createQueryBuilder('d');
+		$qb =  $this->createQueryBuilder($alias);
 
-		return $qb->where('d.status != :s AND d.status != :s0 and d.status != :s1')
+		return $qb->where("$alias.status != :s AND $alias.status != :s0 and $alias.status != :s1")
 			->setParameter('s', Device::STATUS_WANTED)
 			->setParameter('s0', Device::STATUS_DISABLED)
 			->setParameter('s1', Device::STATUS_DONATED);
 	}
 
-	public function getWanted () { 
+	public function getWanted ($alias='d') { 
 
-		$qb =  $this->createQueryBuilder('d');
+		$qb =  $this->createQueryBuilder($alias);
 
-		return $qb->where('d.status = :s')
+		return $qb->where("$alias.status = :s")
 			->setParameter('s', Device::STATUS_WANTED);
 	}
 }

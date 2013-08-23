@@ -91,6 +91,10 @@ class DefaultController extends Controller {
         ));  
     }
 
+    /**
+     * @Route("/appointments", name="_appointment")
+     * @Method({"GET|POST"})
+     */
     public function appointmentAction (Request $request) { 
         
         $appointmentForm = $this->createForm(new Form\AppointmentType());

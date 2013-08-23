@@ -32,6 +32,9 @@
 {% endblock %}
 {% block javascripts %}
 	{{ parent() }}
-	<script src="{{asset('/bundles/bootstrap-datepicker/css/datepicker.css')}}"></script>
+	<script src="{{asset('/bundles/bootstrap-datepicker/js/datepicker.js')}}"></script>
+	<script src="{{asset('/assets/js/datepickers.js')}}"></script>
+	<script src="{{asset('/assets/js/libs/chosen/chosen.jquery.min.js')}}"></script>
+	<script src="{{asset('/assets/js/chosen.js')}}"></script>
 {% endblock %} 
 
