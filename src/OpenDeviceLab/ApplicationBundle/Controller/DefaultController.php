@@ -29,11 +29,6 @@ class DefaultController extends Controller {
 
 		$contactForm->handleRequest($request);
 
-		/* 
-		* @TODO 
-		* Clean this up and abstract out
-		*/
-		$sent = null;
 		if ($contactForm->isValid()){
 			$data = $contactForm->getData();	
 
@@ -41,8 +36,9 @@ class DefaultController extends Controller {
 				->setSubject('Contact')
 				->setFrom($data['email'])
 				->setTo('buffodl@gmail.com')
-				->setBody("${data['first_name']} - ${data['last_name']} \n\n
-						   ${data['message']}"
+                ->setBody(trim("${data['first_name']} - 
+                                ${data['last_name']} \n\n 
+                                ${data['message']}")
 				);
 
 			if ($this->get('mailer')->send($message)) {

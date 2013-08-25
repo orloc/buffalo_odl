@@ -167,11 +167,22 @@ div#content-wrapper div.content div.main_content_wrapper address {
 div#content-wrapper div.content div.main_content_wrapper #what-is {
   margin-top: 20px;
 }
-div#content-wrapper div.content div.main_content_wrapper #what-is ul li {
-  margin-left: 30px;
+div#content-wrapper div.content div.main_content_wrapper #what-is #list {
+  height: 220px;
 }
-div#content-wrapper div.content div.main_content_wrapper #what-is ul:first-child {
-  margin-right: 30px;
+div#content-wrapper div.content div.main_content_wrapper #what-is img {
+  display: block;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+div#content-wrapper div.content div.main_content_wrapper #what-is ul li {
+  display: block;
+  margin-top: 10px;
+  padding-left: 20px;
+}
+div#content-wrapper div.content div.main_content_wrapper #what-is ulfirst-child {
+  margin-top: 0;
 }
 div#content-wrapper div.content div.main_content_wrapper div#device-list {
   margin-top: 40px;
@@ -315,12 +326,12 @@ div#footer #dev-links > a:first-of-type {
   }
   #what-is ul li {
     margin-left: 0px !important;
-    display: block !important;
-    margin-top: 10px;
-    padding-left: 20px;
   }
   #what-is ul:first-child {
     margin-right: 0px !important;
+  }
+  #what-is img {
+    display: none;
   }
   #contact-copy {
     width: 100%;

@@ -167,15 +167,26 @@ div#content-wrapper {
 
 			#what-is { 
 				margin-top:20px;
+                
+                #list { 
+                    height: 220px;
+                }
+
+                img { 
+                    display:block;
+                    .center;
+                }
 				
 				ul {
 					li { 
-						margin-left: 30px;
+                        display: block;
+                        margin-top: 10px;
+                        padding-left: 20px;
 					}
 
-					&:first-child {
-						margin-right:30px;
-					}
+                    &first-child {
+                        margin-top: 0;
+                    }
 				}
 			}
 
@@ -376,14 +387,14 @@ div#footer {
 		ul {
 			li { 
 				margin-left: 0px !important;
-				display: block !important;
-				margin-top: 10px;
-				padding-left: 20px;
 			}
 			&:first-child {
 				margin-right:0px !important;
 			}
 		}
+        img { 
+            display: none;
+        }
 	}
 
 	#contact-copy {
