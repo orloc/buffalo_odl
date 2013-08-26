@@ -6,27 +6,36 @@
 {% endblock %}
 {% block body %}
     <div id="donate" class="content row-fluid">
-        <div class="span12 content_wrapper">
+        <div class="span12 main_content_wrapper">
 			<br>
 			{% include 'OpenDeviceLabApplicationBundle::flashes.html.twig' %}
-            {{ form_start(form) }}
-            <fieldset>
-                <h2>Schedule an Appointment</h2>
-				<hr>
-                    {{ form_row(form.devices) }}
-					<br>
-					{{ form_label(form.start_time,'Date') }}
-                    {{ form_widget(form.start_time.date) }}
+            <div class="margin-zero" class="row-fluid">
+                {{ form_start(form) }}
+                <fieldset>
+                    <h2>Schedule an Appointment</h2>
+                    <hr>
+                    <div class="span6">
+                        {{ form_row(form.devices) }}
+                        <br>
+                        {{ form_label(form.start_time,'Date') }}
+                        {{ form_widget(form.start_time.date) }}
 
-                    {{ form_label(form.start_time.time, 'at') }}
-                    {{ form_widget(form.start_time.time) }}
+                        {{ form_label(form.start_time.time, 'at') }}
+                        {{ form_widget(form.start_time.time) }}
 
 
-                    {{ form_label(form.end_time,'threw') }}
-                    {{ form_widget(form.end_time) }}
-            </fieldset>
-			<button class="btn btn-small" type="submit">Submit</button>
-            {{ form_end(form) }}
+                        {{ form_label(form.end_time,'threw') }}
+                        {{ form_widget(form.end_time) }}
+                        <button id="continue" class="btn btn-small">Continue</button>
+                    </div>
+                    <div id="userForm" class="span6">
+                        {{ form_rest(form.user) }}
+                        
+                        <button class="btn btn-small" type="submit">Submit</button>
+                    </div>
+                </fieldset>
+                {{ form_end(form) }}
+            </div>
         </div>
     </div>
 {% endblock %}
@@ -36,5 +45,17 @@
 	<script src="{{asset('/assets/js/datepickers.js')}}"></script>
 	<script src="{{asset('/assets/js/libs/chosen/chosen.jquery.min.js')}}"></script>
 	<script src="{{asset('/assets/js/chosen.js')}}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() { 
+            $('#userForm').hide();
+
+            $("#continue").click(function(e) { 
+                e.stopPropagation();
+                
+                $('#userForm').fadeIn();
+
+            });
+        });
+    </script>
 {% endblock %} 
 

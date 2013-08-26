@@ -144,6 +144,9 @@ div#content-wrapper div.content div.main_content_wrapper {
   margin-left: auto;
   margin-right: auto;
 }
+div#content-wrapper div.content div.main_content_wrapper .margin-zero.span6 {
+  margin: 0px;
+}
 div#content-wrapper div.content div.main_content_wrapper a {
   font-size: 16px;
   line-height: 22px;
@@ -163,6 +166,28 @@ div#content-wrapper div.content div.main_content_wrapper address {
   padding: 20px;
   padding-top: 0px;
   font-size: 15px;
+}
+div#content-wrapper div.content div.main_content_wrapper form {
+  margin-top: 95px;
+  padding: 20px;
+}
+div#content-wrapper div.content div.main_content_wrapper form label {
+  font-size: 15px;
+}
+div#content-wrapper div.content div.main_content_wrapper form textarea {
+  resize: none;
+  width: 90%;
+  max-width: 90%;
+  min-width: 90%;
+  height: 125px;
+  max-height: 125px;
+  min-height: 125px;
+}
+div#content-wrapper div.content div.main_content_wrapper form input#contacttype_captcha {
+  margin: 0 0 0 20px;
+}
+div#content-wrapper div.content div.main_content_wrapper form button {
+  margin-top: 10px;
 }
 div#content-wrapper div.content div.main_content_wrapper #what-is {
   margin-top: 20px;
@@ -229,28 +254,6 @@ div#content-wrapper div.content div.main_content_wrapper div#contact {
 }
 div#content-wrapper div.content div.main_content_wrapper div#contact p {
   margin-top: 15px;
-}
-div#content-wrapper div.content div.main_content_wrapper div#contact form {
-  margin-top: 95px;
-  padding: 20px;
-}
-div#content-wrapper div.content div.main_content_wrapper div#contact form label {
-  font-size: 15px;
-}
-div#content-wrapper div.content div.main_content_wrapper div#contact form textarea {
-  resize: none;
-  width: 100%;
-  max-width: 100%;
-  min-width: 100%;
-  height: 125px;
-  max-height: 125px;
-  min-height: 125px;
-}
-div#content-wrapper div.content div.main_content_wrapper div#contact form input#contacttype_captcha {
-  margin: 0 0 0 20px;
-}
-div#content-wrapper div.content div.main_content_wrapper div#contact form button {
-  margin-top: 10px;
 }
 div#content-wrapper div#map-canvas {
   height: 500px;

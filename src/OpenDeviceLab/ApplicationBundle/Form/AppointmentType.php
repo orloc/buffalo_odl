@@ -42,7 +42,8 @@ class AppointmentType extends AbstractType {
 			'widget' => 'single_text',
             'input' => 'datetime',
             'constraints' => new Assert\NotBlank()
-        ));
+        ))
+        ->add('user', new ContactType());
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver) { 
