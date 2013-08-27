@@ -26,6 +26,7 @@ $(document).ready(function(){
 		if ($('#wanted-devices').is(':hidden')){
 			$('#current-devices').fadeOut('fast', function(){ 
 				$('#device-label').text('Wish List');
+                $('#switch-table').text('Switch to Available Devices');
 				$('#current-head').fadeOut('fast', function () { 
 					$('#wanted-head').fadeIn('slow');
 					$('#wanted-devices').fadeIn('slow');
@@ -35,6 +36,8 @@ $(document).ready(function(){
 		} else { 
 			$('#wanted-devices').fadeOut('fast', function(){ 
 				$('#device-label').text('Available Devices');
+
+                $('#switch-table').text('Switch to our Wish List');
 				$('#wanted-head').fadeOut('fast', function () { 
 					$('#current-head').fadeIn('slow');
 					$('#current-devices').fadeIn('slow');
