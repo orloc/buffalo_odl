@@ -20,9 +20,9 @@ class UserType extends BaseUserType {
 			))
             ->add('roles', 'choice', array(
 				'choices' => array(
-					'ROLE_USER',
-					'ROLE_ADMIN',
-					'ROLE_SUPER_ADMIN'
+					'ROLE_USER' => 'User',
+					'ROLE_ADMIN' => 'Admin',
+					'ROLE_SUPER_ADMIN' => 'Super Admin'
 				),
 				'constraints' => new Assert\NotBlank(),
 				'data' => 'ROLE_USER'
@@ -32,7 +32,6 @@ class UserType extends BaseUserType {
 				'second_name' => 'confirm',
 				'type' => 'password',
 				'required' => false,
-				'constraints' => new Assert\NotBlank()
 			));
 	}
 

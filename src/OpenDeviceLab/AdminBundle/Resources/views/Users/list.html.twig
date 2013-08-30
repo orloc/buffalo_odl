@@ -10,6 +10,9 @@
 			<thead>
 				<tr>
 					<th>
+					ID
+					</th>
+					<th>
 						First Name
 					</th>
 					<th>
@@ -27,13 +30,19 @@
 			 {% for user in users %}
 				<tr>
 					<td>
+						{{ user.getId() }}
+					</td>
+					<td>
 						{{ user.getFirstName() }}
 					</td>
 					<td> 
 						{{ user.getLastName() }}
 					</td>
-					<td>
+					<td class="delete">
 						<a href="{{ path('admin_user_detail', { id: user.getId() }) }}">{{ user.getEmail() }}</a>
+						{{ form_start(form, { 'action' : path('admin_user_delete', { id: user.getId() }) }) }}
+							{{form_widget(form.delete, { attr: {'class': 'btn btn-link delete-btn'}}) }}
+						{{ form_end(form) }}
 					</td>
 					<td>
 						{% for role in user.getRoles() %}
@@ -45,4 +54,39 @@
 			</tbody>
 		</table>
 	</div>
+{% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			var form = $('.delete form').clone();
+
+			$('.delete').each(function(index){
+				
+				var userId = $(this).prev('td').prev('td').prev('td').text().replace(/\s+/g,'');
+				var target = $(form).attr('action').slice(0, -1) + userId;
+
+				console.log(target);
+				if (index != 0) {
+					$(form).attr('action', target);
+					$(this).append(form);
+				}
+
+				form = form.clone();
+			});
+
+			$('.delete-btn').each(function(){
+				$(this).hide();
+			});
+
+			$('tr').each(function(){
+				$(this).mouseover(function(){
+					$(this).find('.delete-btn').show();
+				}).mouseout(function(){
+					$(this).find('.delete-btn').hide();
+				});
+			});
+		});
+	</script>
 {% endblock %}

@@ -20,12 +20,18 @@ class UserController extends Controller {
 	*/
 	public function listAction () {
 		
+		$form = $this->createFormBuilder()
+			->setMethod('DELETE')
+			->add('delete', 'submit')
+			->getForm();
+
 		$em = $this->getDoctrine()->getManager();
 
 		$users = $em->getRepository('OpenDeviceLabApplicationBundle:User')->findAll();
 
 		return $this->render('OpenDeviceLabAdminBundle:Users:list.html.twig', array(
-			'users' => $users
+			'users' => $users,
+			'form'	=> $form->createView()
 		));
 	}
 
@@ -46,6 +52,19 @@ class UserController extends Controller {
 		if ($form->isValid()){ 
 			$entity = $form->getData();
 
+			var_dump($entity->getRoles());die;
+			
+			if ($entity->getPassword()){
+				$factory = $this->get('security.encoder_factory');
+				$encoder = $factory->getEncoder($entity);
+				
+				$entity->setPassword(
+					$encoder->encodePassword(
+						$entity->getPassword(), 
+						$entity->getSalt()
+				));
+			}
+
 			$em->persist($entity);
 			$em->flush();
 			
@@ -65,6 +84,52 @@ class UserController extends Controller {
 	* @Method({"GET|POST"})
 	*/
 	public function createAction(Request $request) {
+
+		$form = $this->createForm(new Form\UserType());
 		
+		$form->handleRequest($request);
+
+		if ($form->isValid()){ 
+			$entity = $form->getData();	
+
+			$factory = $this->get('security.encoder_factory');
+			$encoder = $factory->getEncoder($entity);
+			
+			$entity->setPassword(
+				$encoder->encodePassword(
+					$entity->getPassword(), 
+					$entity->getSalt()
+			));
+
+
+			$em = $this->getDoctrine()->getManager();
+
+			$em->persist($entity);
+			$em->flush();
+
+			$this->get('session')->getFlashBag()->add('success', sprintf('User with id: %s was successfully created', $id));
+		}
+	}
+
+	/**
+	* @Route("/users/delete/{id}", name="admin_user_delete")
+	* @Method({"DELETE"}) 
+	*/
+	public function deleteAction(Request $request, $id){ 
+
+		
+		$em = $this->getDoctrine()->getManager();
+		$user = $em->getRepository('OpenDeviceLabApplicationBundle:User')->find($id);
+
+		if ($user) { 
+			$em->remove($user);
+			$em->flush();
+
+			$this->get('session')->getFlashBag()->add('success', sprintf('User with id: %s was successfully removed', $id));
+		} else { 
+			$this->get('session')->getFlashBag()->add('warning', 'User not found');
+		}
+
+		return $this->redirect($this->generateUrl('admin_user_list'));
 	}
 }

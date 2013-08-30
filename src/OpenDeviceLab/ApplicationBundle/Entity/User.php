@@ -200,7 +200,7 @@ class User implements UserInterface {
      */
     public function setRoles($roles)
     {
-        $this->roles = $roles;
+        $this->roles = is_array($roles) ? $roles : array($roles);;
     
         return $this;
     }

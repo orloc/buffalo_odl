@@ -17,4 +17,3 @@ class RegistrationType extends UserType {
 
 	}
 
-}
