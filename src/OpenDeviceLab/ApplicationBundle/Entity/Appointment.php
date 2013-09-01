@@ -190,4 +190,14 @@ class Appointment {
     {
         return $this->device;
     }
+
+    /**
+     * Get device
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getDevice()
+    {
+        return $this->device;
+    }
 }

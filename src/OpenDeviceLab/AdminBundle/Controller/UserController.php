@@ -52,8 +52,6 @@ class UserController extends Controller {
 		if ($form->isValid()){ 
 			$entity = $form->getData();
 
-			var_dump($entity->getRoles());die;
-			
 			if ($entity->getPassword()){
 				$factory = $this->get('security.encoder_factory');
 				$encoder = $factory->getEncoder($entity);

@@ -51,9 +51,9 @@ class User implements UserInterface {
     private $organization;
 
 	/** 
-	* @ORM\Column(type="array", nullable=true) 
+	* @ORM\Column(type="string", nullable=true) 
 	*/
-	private $roles;
+	private $role;
 
 	private $contributed_devices; 
 
@@ -67,6 +67,7 @@ class User implements UserInterface {
 	*/
 	private $is_active;
 	
+
     /**
      * Constructor
      */
@@ -92,7 +93,7 @@ class User implements UserInterface {
 	}
 
 	public function getRoles() { 
-		return is_array($this->roles) ? $this->roles : array();
+		return array($this->role);
 
 	}
 
@@ -193,19 +194,6 @@ class User implements UserInterface {
     }
 
     /**
-     * Set roles
-     *
-     * @param array $roles
-     * @return User
-     */
-    public function setRoles($roles)
-    {
-        $this->roles = is_array($roles) ? $roles : array($roles);;
-    
-        return $this;
-    }
-
-    /**
      * Set is_active
      *
      * @param boolean $isActive
@@ -295,5 +283,28 @@ class User implements UserInterface {
     public function getOrganization()
     {
         return $this->organization;
+    }
+
+    /**
+     * Set role
+     *
+     * @param string $role
+     * @return User
+     */
+    public function setRole($role)
+    {
+        $this->role = $role;
+    
+        return $this;
+    }
+
+    /**
+     * Get role
+     *
+     * @return string 
+     */
+    public function getRole()
+    {
+        return $this->role;
     }
 }

@@ -18,14 +18,13 @@ class UserType extends BaseUserType {
         $builder->add('username', 'text', array(
 				'constraints' => new Assert\NotBlank()
 			))
-            ->add('roles', 'choice', array(
+            ->add('role', 'choice', array(
 				'choices' => array(
 					'ROLE_USER' => 'User',
 					'ROLE_ADMIN' => 'Admin',
 					'ROLE_SUPER_ADMIN' => 'Super Admin'
 				),
-				'constraints' => new Assert\NotBlank(),
-				'data' => 'ROLE_USER'
+				'constraints' => new Assert\NotBlank()
 			))
 			->add('password', 'repeated', array(
 				'first_name' => 'password', 
@@ -33,11 +32,5 @@ class UserType extends BaseUserType {
 				'type' => 'password',
 				'required' => false,
 			));
-	}
-
-	public function setDefaultOptions(OptionsResolverInterface $resolver) { 
-		$resolver->setDefaults(array(
-			'data_class' => 'OpenDeviceLab\ApplicationBundle\Entity\User'
-		));
 	}
 }
